@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_kmf_module_key_policy">
+    <sys_kmf_module_key_policy action="INSERT_OR_UPDATE">
+        <crypto_module display_value="sn_sec_int.glide_encrypter">73215b9a537b1010cd7addeeff7b12ea</crypto_module>
+        <key_type display_value="Symmetric Key Encryption Key">ca005cf7c7103300af4d43c6f0976328</key_type>
+        <last_enforced>2024-09-04 06:56:25</last_enforced>
+        <result>reject</result>
+        <sys_class_name>sys_kmf_module_key_policy</sys_class_name>
+        <sys_created_by>muhammad.askar@sacumen.com</sys_created_by>
+        <sys_created_on>2024-09-04 06:56:25</sys_created_on>
+        <sys_id>859cf0ff331c9e106f51b1945d5c7b42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_kmf_module_key_policy_859cf0ff331c9e106f51b1945d5c7b42</sys_update_name>
+        <sys_updated_by>muhammad.askar@sacumen.com</sys_updated_by>
+        <sys_updated_on>2024-09-04 06:56:25</sys_updated_on>
+    </sys_kmf_module_key_policy>
+</record_update>

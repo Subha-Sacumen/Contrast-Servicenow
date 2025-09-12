@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="28157ab8335892106f51b1945d5c7b87" sys_domain="global" table="x_ntsi_contrast_ap_contrast_application_json_import_sast" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>13dddadb339b5a506f51b1945d5c7b32</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_name</element>
+            <position>1</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>97dddadb339b5a506f51b1945d5c7b32</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_firstcreatedtime</element>
+            <position>2</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1fdddadb339b5a506f51b1945d5c7b32</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_scanid</element>
+            <position>3</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>93dddadb339b5a506f51b1945d5c7b33</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_ruleid</element>
+            <position>4</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1bdddadb339b5a506f51b1945d5c7b33</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_level</element>
+            <position>5</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9fdddadb339b5a506f51b1945d5c7b33</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>6</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>17dddadb339b5a506f51b1945d5c7b34</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_id</element>
+            <position>7</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9bdddadb339b5a506f51b1945d5c7b34</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_organizationid</element>
+            <position>8</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>13dddadb339b5a506f51b1945d5c7b35</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_status</element>
+            <position>9</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>97dddadb339b5a506f51b1945d5c7b35</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_lastupdatedtime</element>
+            <position>10</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1fdddadb339b5a506f51b1945d5c7b35</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>11</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>93dddadb339b5a506f51b1945d5c7b36</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_message</element>
+            <position>12</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1bdddadb339b5a506f51b1945d5c7b36</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>13</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9fdddadb339b5a506f51b1945d5c7b36</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_lastseentime</element>
+            <position>14</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>17dddadb339b5a506f51b1945d5c7b37</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_fingerprint</element>
+            <position>15</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9bdddadb339b5a506f51b1945d5c7b37</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_severity</element>
+            <position>16</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>13dddadb339b5a506f51b1945d5c7b38</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_isnew</element>
+            <position>17</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>97dddadb339b5a506f51b1945d5c7b38</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_projectid</element>
+            <position>18</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1fdddadb339b5a506f51b1945d5c7b38</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_critical</element>
+            <position>19</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>93dddadb339b5a506f51b1945d5c7b39</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_medium</element>
+            <position>20</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1bdddadb339b5a506f51b1945d5c7b39</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_archived</element>
+            <position>21</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9fdddadb339b5a506f51b1945d5c7b39</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_high</element>
+            <position>22</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>17dddadb339b5a506f51b1945d5c7b3a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_low</element>
+            <position>23</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9bdddadb339b5a506f51b1945d5c7b3a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>24</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>13dddadb339b5a506f51b1945d5c7b3b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_language</element>
+            <position>25</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>97dddadb339b5a506f51b1945d5c7b3b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_note</element>
+            <position>26</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1fdddadb339b5a506f51b1945d5c7b3b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_createdby</element>
+            <position>27</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>93dddadb339b5a506f51b1945d5c7b3c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_branch</element>
+            <position>28</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1bdddadb339b5a506f51b1945d5c7b3c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_completedscans</element>
+            <position>29</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9fdddadb339b5a506f51b1945d5c7b3c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_parentid</element>
+            <position>30</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>17dddadb339b5a506f51b1945d5c7b3d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_lastscantime</element>
+            <position>31</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9bdddadb339b5a506f51b1945d5c7b3d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_lastscanid</element>
+            <position>32</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>13dddadb339b5a506f51b1945d5c7b3e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_nativeid</element>
+            <position>33</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>97dddadb339b5a506f51b1945d5c7b3e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_securitystandards</element>
+            <position>34</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1fdddadb339b5a506f51b1945d5c7b3e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>35</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>93dddadb339b5a506f51b1945d5c7b3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_source_link</element>
+            <position>36</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>1bdddadb339b5a506f51b1945d5c7b3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_cwe_id</element>
+            <position>37</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>9fdddadb339b5a506f51b1945d5c7b3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_import_state_comment</element>
+            <position>38</position>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2025-01-30 03:52:52</sys_created_on>
+            <sys_id>17dddadb339b5a506f51b1945d5c7b40</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" sys_domain="global" view="Default view">28157ab8335892106f51b1945d5c7b87</sys_ui_section>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2025-01-30 03:52:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_ntsi_contrast_ap_contrast_application_json_import_sast</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>muhammad.askar@sacumen.com</sys_created_by>
+            <sys_created_on>2024-08-26 08:01:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>28157ab8335892106f51b1945d5c7b87</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_ntsi_contrast_ap_contrast_application_json_import_sast</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+            <sys_update_name>sys_ui_section_28157ab8335892106f51b1945d5c7b87</sys_update_name>
+            <sys_updated_by>muhammad.askar@sacumen.com</sys_updated_by>
+            <sys_updated_on>2024-08-26 08:01:06</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Contrast Application Vulnerability">6c909e0d834c9210b9b19b00feaad3c7</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>DIRECT</link_type>
+        <map_page/>
+        <mobile_title>Contrast I</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name/>
+        <order>310</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query>ui_page.do?sys_id=0da12f95c3ece250fc40382a05013181</query>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>x_ntsi_contrast_ap.contrast_api</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-03-27 07:03:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d382a3d9c3ece250fc40382a05013169</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Contact Support</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_app_module_d382a3d9c3ece250fc40382a05013169</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-04-28 11:57:36</sys_updated_on>
+        <timeline_page/>
+        <title>Contact Support</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

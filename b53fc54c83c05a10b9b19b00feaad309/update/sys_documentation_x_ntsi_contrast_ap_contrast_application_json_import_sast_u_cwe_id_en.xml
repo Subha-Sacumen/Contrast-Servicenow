@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_cwe_id" label="cwe_id" language="en" table="x_ntsi_contrast_ap_contrast_application_json_import_sast">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_cwe_id</element>
+            <help/>
+            <hint/>
+            <label>cwe_id</label>
+            <language>en</language>
+            <name>x_ntsi_contrast_ap_contrast_application_json_import_sast</name>
+            <plural>cwe_ids</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>subha.udhayakumar</sys_created_by>
+            <sys_created_on>2024-09-12 09:11:26</sys_created_on>
+            <sys_id>2e00705cc305de10fc40382a050131ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>cwe_id</sys_name>
+            <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+            <sys_update_name>sys_documentation_x_ntsi_contrast_ap_contrast_application_json_import_sast_u_cwe_id_en</sys_update_name>
+            <sys_updated_by>subha.udhayakumar</sys_updated_by>
+            <sys_updated_on>2024-09-12 09:11:26</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

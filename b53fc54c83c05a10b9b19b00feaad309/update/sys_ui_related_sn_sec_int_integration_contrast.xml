@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="sn_sec_int_integration" version="2" view="contrast">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Third Party Integration - Contrast" name="sn_sec_int_integration" related_list="NULL" sys_domain="global" view="5118a7f6979d92106b73be6de053af6e">b82b598883045a10b9b19b00feaad3e8</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>sn_sec_int_config.integration</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>subha.u@sacumen.com</sys_created_by>
+            <sys_created_on>2024-08-11 07:17:01</sys_created_on>
+            <sys_id>742b598883045a10b9b19b00feaad3e9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>subha.u@sacumen.com</sys_updated_by>
+            <sys_updated_on>2024-08-11 07:17:01</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Third Party Integration - Contrast" name="sn_sec_int_integration" related_list="NULL" sys_domain="global" view="5118a7f6979d92106b73be6de053af6e">b82b598883045a10b9b19b00feaad3e8</list_id>
+            <order_by/>
+            <position>1</position>
+            <related_list>sn_sec_int_impl.integration</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>subha.u@sacumen.com</sys_created_by>
+            <sys_created_on>2024-08-11 07:17:01</sys_created_on>
+            <sys_id>782b598883045a10b9b19b00feaad3e9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>subha.u@sacumen.com</sys_updated_by>
+            <sys_updated_on>2024-08-11 07:17:01</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Third Party Integration - Contrast" name="sn_sec_int_integration" related_list="NULL" sys_domain="global" view="5118a7f6979d92106b73be6de053af6e">b82b598883045a10b9b19b00feaad3e8</list_id>
+            <order_by/>
+            <position>2</position>
+            <related_list>sn_vul_integration.integration</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>subha.u@sacumen.com</sys_created_by>
+            <sys_created_on>2024-08-11 07:17:01</sys_created_on>
+            <sys_id>7c2b598883045a10b9b19b00feaad3e9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>subha.u@sacumen.com</sys_updated_by>
+            <sys_updated_on>2024-08-11 07:17:01</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Third Party Integration - Contrast</calculated_name>
+            <filter/>
+            <name>sn_sec_int_integration</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>subha.u@sacumen.com</sys_created_by>
+            <sys_created_on>2024-08-11 07:17:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b82b598883045a10b9b19b00feaad3e8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Third Party Integration - Contrast</sys_name>
+            <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+            <sys_update_name>sys_ui_related_sn_sec_int_integration_contrast</sys_update_name>
+            <sys_updated_by>subha.u@sacumen.com</sys_updated_by>
+            <sys_updated_on>2024-08-11 07:17:01</sys_updated_on>
+            <sys_user/>
+            <view display_value="Contrast" name="contrast">5118a7f6979d92106b73be6de053af6e</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

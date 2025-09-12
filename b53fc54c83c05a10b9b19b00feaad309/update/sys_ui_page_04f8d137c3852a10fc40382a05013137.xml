@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_ntsi_contrast_ap_AppPrivacyPolicy.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false"
+    xmlns:j="jelly:core"
+    xmlns:g="glide"
+    xmlns:j2="null"
+    xmlns:g2="null">
+    <div class="container">
+        <br/>
+            <div class="container">
+				<p><img title="ContrastLogo.png" src="/sys_attachment.do?sys_id=4d64e9c6976ce2506b73be6de053af7c" alt="" width="300" height="150" data-library="false" /></p>
+                <table class="table-sm table-responsive borderless">
+                    <tr>
+                        <td>
+                            <h2>AppsPrivacyPolicy</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3><a rel="noopener noreferrer nofollow" href="AppsPrivacyPolicy" target="_blank">AppsPrivacyPolicy</a>
+                            </h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</j:jelly>
+]]></html>
+        <name>AppPrivacyPolicy</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-04-28 11:58:34</sys_created_on>
+        <sys_id>04f8d137c3852a10fc40382a05013137</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>AppPrivacyPolicy</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_ui_page_04f8d137c3852a10fc40382a05013137</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-04-28 12:02:12</sys_updated_on>
+    </sys_ui_page>
+</record_update>

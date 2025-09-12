@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
+    <sys_rest_message action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <authentication_type>no_authentication</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description/>
+        <name>GetDetails</name>
+        <oauth2_profile/>
+        <protocol_name/>
+        <rest_endpoint>${baseUrl}+${orgId}</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>muhammad.askar@sacumen.com</sys_created_by>
+        <sys_created_on>2024-09-11 05:41:08</sys_created_on>
+        <sys_id>fbdde44e83a05610b9b19b00feaad3ec</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GetDetails</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_rest_message_fbdde44e83a05610b9b19b00feaad3ec</sys_update_name>
+        <sys_updated_by>muhammad.askar@sacumen.com</sys_updated_by>
+        <sys_updated_on>2024-09-18 05:41:32</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+</record_update>

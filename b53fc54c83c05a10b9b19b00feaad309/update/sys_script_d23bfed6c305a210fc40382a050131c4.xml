@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sn_vul_app_vulnerable_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sn_vul_app_vulnerable_item">scan_type=interactive^source_avit_idVALCHANGES^EQ<item display_value="Interactive" endquery="false" field="scan_type" goto="false" newquery="false" operator="=" or="false" value="interactive"/>
+            <item endquery="false" field="source_avit_id" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update recommendations</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    source_recommendation();
+    source_vulnerability_explanation();
+    source_vulnerability_summary();
+
+    function source_vulnerability_summary() {
+        var endPoint;
+        //Get Authorization val
+        var gri = new GlideRecord('sn_sec_int_impl_config');
+        gri.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=6fbf705c83295210b9b19b00feaad30e');
+        gri.query();
+
+        //Get API-Key val
+        var grk = new GlideRecord('sn_sec_int_impl_config');
+        grk.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=3a1f705c83295210b9b19b00feaad360');
+        grk.query();
+
+        //Get API EndPoint val
+        var org = new GlideRecord('sn_sec_int_impl_config');
+        org.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=13ff309c83295210b9b19b00feaad319');
+        org.query();
+        if (org.next()) {
+            var grURL = new GlideRecord('sn_sec_int_impl_config');
+            grURL.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=a46f705c83295210b9b19b00feaad3ae');
+            grURL.query();
+            if (grURL.next()) {
+                endPoint = "https://" + grURL.value + "/Contrast/api/ng/" + org.value + "/traces/" + current.source_avit_id + "/story?expand=skip_links";
+            }
+
+        }
+
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'Recommendations');
+        r.setEndpoint(endPoint);
+        if (gri.next() && grk.next()) {
+            r.setRequestHeader('API-Key', grk.value); //Load API-Key
+            r.setRequestHeader('Authorization', gri.value); //Load Authorization
+
+        }
+        var response = r.execute();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+
+        if (httpStatus == 200 || httpStatus == 201) {
+            ;
+            var res = JSON.parse(responseBody);
+            current.source_vulnerability_summary = res.story.risk.text;
+        }
+
+    }
+
+    function source_vulnerability_explanation() {
+        var endPoint;
+
+        // Get Authorization value
+        var gri = new GlideRecord('sn_sec_int_impl_config');
+        gri.addEncodedQuery('implementation=bacbac81330c12506f51b1945d5c7bf7^configuration=6fbf705c83295210b9b19b00feaad30e');
+        gri.query();
+        var authorization = gri.next() ? gri.value : null;
+
+        // Get API-Key value
+        var grk = new GlideRecord('sn_sec_int_impl_config');
+        grk.addEncodedQuery('implementation=bacbac81330c12506f51b1945d5c7bf7^configuration=3a1f705c83295210b9b19b00feaad360');
+        grk.query();
+        var apiKey = grk.next() ? grk.value : null;
+
+        // Get Organization ID
+        var org = new GlideRecord('sn_sec_int_impl_config');
+        org.addEncodedQuery('implementation=bacbac81330c12506f51b1945d5c7bf7^configuration=13ff309c83295210b9b19b00feaad319');
+        org.query();
+        var organizationId = org.next() ? org.value : null;
+
+        // Get Base URL
+        var grURL = new GlideRecord('sn_sec_int_impl_config');
+        grURL.addEncodedQuery('implementation=bacbac81330c12506f51b1945d5c7bf7^configuration=a46f705c83295210b9b19b00feaad3ae');
+        grURL.query();
+        var baseURL = grURL.next() ? grURL.value : null;
+
+        if (authorization && apiKey && organizationId && baseURL) {
+            endPoint = "https://" + baseURL + "/Contrast/api/ng/" + organizationId + "/traces/" + current.source_avit_id + "/story?expand=skip_links";
+
+            var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'Recommendations');
+            r.setEndpoint(endPoint);
+            r.setRequestHeader('API-Key', apiKey);
+            r.setRequestHeader('Authorization', authorization);
+
+            try {
+                var response = r.execute();
+                var httpStatus = response.getStatusCode();
+
+                if (httpStatus == 200 || httpStatus == 201) {
+                    var res = JSON.parse(response.getBody());
+                    var chapters = res.story && res.story.chapters ? res.story.chapters : [];
+                    var chapterOutput = "";
+
+                    chapters.forEach(function(chapter) {
+                        var introText = chapter.introText || "";
+                        var body = chapter.body || "";
+                        chapterOutput += introText + "\n" + body + "\n";
+                    });
+                    // Remove only end new lines
+                    chapterOutput = chapterOutput.replace(/\n+$/, '');
+                    // Replace remaining new lines with <br> for display
+                    chapterOutput = chapterOutput.replace(/\n/g, '<br>');
+
+                    current.source_vulnerability_explanation = chapterOutput;
+                } else {
+                    gs.error("Failed with status: " + httpStatus);
+                }
+            } catch (error) {
+                gs.error("REST API call failed: " + error.message);
+            }
+        } else {
+            gs.error("One or more required configuration values are missing.");
+        }
+    }
+
+    function source_recommendation() {
+
+        var endPoint;
+        //Get Authorization val
+        var gri = new GlideRecord('sn_sec_int_impl_config');
+        gri.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=6fbf705c83295210b9b19b00feaad30e');
+        gri.query();
+
+        //Get API-Key val
+        var grk = new GlideRecord('sn_sec_int_impl_config');
+        grk.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=3a1f705c83295210b9b19b00feaad360');
+        grk.query();
+
+        //Get API EndPoint val
+        var org = new GlideRecord('sn_sec_int_impl_config');
+        org.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=13ff309c83295210b9b19b00feaad319');
+        org.query();
+        if (org.next()) {
+            var grURL = new GlideRecord('sn_sec_int_impl_config');
+            grURL.addEncodedQuery('implementation=' + "bacbac81330c12506f51b1945d5c7bf7" + '^configuration=a46f705c83295210b9b19b00feaad3ae');
+            grURL.query();
+            if (grURL.next()) {
+                endPoint = "https://" + grURL.value + "/Contrast/api/ng/" + org.value + "/traces/" + current.source_avit_id + "/recommendation?expand=skip_links";
+
+            }
+
+        }
+
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'Recommendations');
+        r.setEndpoint(endPoint);
+        if (gri.next() && grk.next()) {
+            r.setRequestHeader('API-Key', grk.value); //Load API-Key
+            r.setRequestHeader('Authorization', gri.value); //Load Authorization
+
+        }
+        var response = r.execute();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+
+        if (httpStatus == 200 || httpStatus == 201) {
+            var res = JSON.parse(responseBody);
+            current.source_recommendation = res.recommendation.text;
+
+
+
+        }
+    }
+    current.integration = "Contrast IAST List Integration";
+
+
+    current.update();
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-04-24 03:19:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d23bfed6c305a210fc40382a050131c4</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Update recommendations</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_script_d23bfed6c305a210fc40382a050131c4</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-04-24 03:35:14</sys_updated_on>
+        <template/>
+        <when>async_always</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=d23bfed6c305a210fc40382a050131c4"/>
+</record_update>

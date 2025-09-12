@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_ntsi_contrast_ap.Implementation</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>This script is used to get implementation information from security model</description>
+        <name>Implementation</name>
+        <script><![CDATA[var Implementation = Class.create();
+Implementation.prototype = {
+    initialize: function() {},
+
+    /**
+     * set config details
+     * @parameter(string): implementation ID 
+     * @parameter(object): contains config information, like: 
+     *                       {
+     *							url: www.google.com,						 
+     *							userName: user,						 
+     *							password: password						 
+     *						 }
+     */
+    validateConfiguration: function(configs) {
+
+        var key_val = "";
+        if (configs.api_key == undefined) {
+            var grk = new GlideRecordSecure('sn_sec_int_impl_config');
+            grk.addEncodedQuery('configuration=3a1f705c83295210b9b19b00feaad360^implementation=bacbac81330c12506f51b1945d5c7bf7');
+            grk.query();
+            if (grk.next()) {
+                key_val = grk.value;
+
+            }
+
+            // grk.get('e321099c83295210b9b19b00feaad39d');
+
+        } else {
+            key_val = configs.api_key;
+        }
+
+        //Load REST API
+        endPoint = "https://" + configs.contrast_url + "/Contrast/api/sast/organizations/" + configs.org_id + "/projects";
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+        r.setEndpoint(endPoint);
+        r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+        r.setRequestHeader('API-Key', key_val); //Load API-Key
+        r.setRequestHeader('Authorization', configs.authorization); //Load Authorization
+        r.setHttpTimeout(30000);
+
+        return r.executeAsync(); // Execute API
+    },
+    setConfiguration: function(implementationID, configs) {
+        if (this.validateConfiguration(configs).getStatusCode() != 200) {
+            return "FAILURE";
+
+        }
+        if (gs.nil(implementationID))
+            return;
+
+        //retrieve implementation
+        var implGR = new GlideRecordSecure("sn_sec_int_impl");
+        if (implGR.get(implementationID)) {
+            //create configs		
+            for (var key in configs) {
+                var configTemplGR = new GlideRecordSecure("sn_sec_int_config");
+                configTemplGR.addQuery("integration", implGR.integration + "");
+                configTemplGR.addQuery("name", key);
+                configTemplGR.setLimit(1);
+                configTemplGR.query();
+
+                if (configTemplGR.next()) {
+                    var configGR = new GlideRecordSecure("sn_sec_int_impl_config");
+                    configGR.addQuery("configuration", configTemplGR.getUniqueValue());
+                    configGR.addQuery("implementation", implementationID);
+                    configGR.setLimit(1);
+                    configGR.query();
+
+                    var alreadyInserted = configGR.next();
+                    if (!alreadyInserted)
+                        configGR.initialize();
+                    if (configTemplGR.elem_type + "" == "password" && configs[key]) {
+                        configGR.password_value.setDisplayValue(configs[key]);
+                        configGR.setValue("value", configs[key]);
+                    } else
+                        configGR.setValue("value", configs[key]);
+
+                    if (alreadyInserted)
+                        configGR.update();
+                    else {
+                        configGR.setValue("configuration", configTemplGR.getUniqueValue());
+                        configGR.setValue("implementation", implementationID);
+                        configGR.insert();
+                    }
+                }
+            }
+        }
+        return;
+    },
+
+    /**
+     * get config details
+     * @parameter(string): implementation ID 
+     * @return(object): contains config information, like: 
+     *                       {
+     *							url: www.google.com,						 
+     *							userName: user,						 
+     *							password: password						 
+     *						 }
+     */
+    getConfiguration: function(implementationID, getEncryptedValue, fullConfig) {
+        var config = {};
+        if (gs.nil(implementationID))
+            return config;
+
+        // get defined configurations
+        var implConfigGR = new GlideRecordSecure("sn_sec_int_impl_config");
+        implConfigGR.addQuery("implementation", implementationID);
+        implConfigGR.query();
+        while (implConfigGR.next()) {
+            var value = this._processImplConfigData(implConfigGR, getEncryptedValue);
+            config[implConfigGR.configuration.name + ""] = value;
+        }
+
+        var implementationGR = new GlideRecordSecure("sn_sec_int_impl");
+        if (!implementationGR.get(implementationID))
+            return config;
+
+        config.validation = {
+            value: implementationGR.integration.validation_script + ''
+        };
+        config.name = {
+            value: implementationGR.getValue("name")
+        };
+        config.sys_domain = {
+            value: implementationGR.getValue("sys_domain")
+        };
+
+        // get default configurations
+        var configGR = new GlideRecordSecure("sn_sec_int_config");
+        configGR.addQuery("integration", implementationGR.getValue('integration'));
+        configGR.query();
+        while (configGR.next()) {
+            var propertyName = configGR.getValue('name');
+            if (config.hasOwnProperty(propertyName))
+                continue;
+            else
+                config[propertyName] = this._processConfigData(configGR, getEncryptedValue);
+        }
+
+        if (!fullConfig)
+            Object.keys(config).forEach(function(key) {
+                config[key] = config[key].value;
+            });
+
+        return config;
+    },
+
+    /**
+     * process the data based on the data type
+     * @parameter(GlideRecord): implementation configuration GlideRecord
+     * @return(object): the correct data-typed value
+     */
+    _processImplConfigData: function(implConfigGR, getEncryptedValue) {
+        var dataType = implConfigGR.configuration.elem_type;
+        var value = implConfigGR.value + '';
+
+        if (dataType == "password")
+            value = getEncryptedValue ? implConfigGR.password_value + '' : implConfigGR.password_value.getDecryptedValue();
+
+        return this._processData(value, dataType, implConfigGR.configuration);
+    },
+
+    _processData: function(value, dataType, config) {
+        if (dataType == "date")
+            value = new GlideDateTime(value);
+        else if (dataType == "boolean")
+            value = value.toLowerCase() == "true";
+        else if (dataType == "int")
+            value = parseInt(value);
+        else if (dataType == "decimal")
+            value = parseFloat(value);
+
+        if ((dataType == "int" || dataType == "decimal") && isNaN(value))
+            value = '';
+
+        return {
+            value: value,
+            order: +config.order,
+            mandatory: config.mandatory.toString() == 'true',
+            label: config.label.toString(),
+            type: config.elem_type.toString()
+        };
+    },
+
+    /**
+     * process the data based on the data type
+     * @parameter(GlideRecord): integration configuration GlideRecord
+     * @return(object): the correct data-typed value
+     */
+    _processConfigData: function(configGR, getEncryptedValue) {
+        var dataType = configGR.elem_type;
+        var value = configGR.default_value + '';
+
+        if (dataType == "password")
+            value = getEncryptedValue ? configGR.password_value + '' : configGR.password_value.getDecryptedValue();
+
+        return this._processData(value, dataType, configGR);
+    },
+
+    /**
+     * get all implementation ID 
+     * @parameter(string): integration ID 
+     * @return(array): contains all implementationID
+     */
+    getImplementationId: function(integrationID, domain) {
+        var implementation = [];
+        if (gs.nil(integrationID))
+            return implementation;
+
+        var integrationGR = new GlideRecordSecure("sn_sec_int_impl");
+        integrationGR.addQuery("integration", integrationID);
+        integrationGR.addActiveQuery();
+        if (!gs.nil(domain))
+            integrationGR.addQuery("sys_domain", domain);
+        integrationGR.query();
+        while (integrationGR.next()) {
+            implementation.push(integrationGR.getUniqueValue());
+        }
+
+        return implementation;
+    },
+
+    /**
+     * create a implementation record with specified name
+     * note: if instance config item's value is not specified,
+     * default value from integration configuration template will be inserted
+     * 
+     * @integrationID: <String>, the sys_id of an integration
+     * @config: <Object>, JSON object
+     * 
+     * @return(String): implementation ID
+     */
+    createImplementation: function(integrationID, config) {
+        if (gs.nil(integrationID) || !config || Object.keys(config).length === 0)
+            return "";
+
+        //create implementation
+        var implGR = new GlideRecordSecure("sn_sec_int_impl");
+        implGR.initialize();
+        implGR.setValue("integration", integrationID);
+        if (config.name)
+            implGR.setValue("name", config.name);
+        implGR.setValue("active", config.active || false);
+        implGR.setValue("is_default", config.is_default || false);
+        var impl = implGR.insert();
+
+        var tempConfig = {};
+        var defaultConfig = this.getConfiguration(impl);
+        for (var key in defaultConfig) {
+            // if certain config's value is specified, take that value
+            var value = config.hasOwnProperty(key) && config[key] != undefined ? config[key] : defaultConfig[key];
+            tempConfig[key] = value;
+        }
+
+        // isnert the config with the value into the instance config
+        this.setConfiguration(impl, tempConfig);
+
+        return impl;
+    },
+
+    // /**
+    //  * Delete implementation record with given sys id
+    //  * @implId: sys id of the implementation record
+    //  * 
+    //  * @return(Boolean): true if delete is successful, 
+    //  *                   false if given sys id is not valid or could not delete the record.
+    //  */
+    // deleteImplementation: function(implId) {
+    //     if (gs.nil(implId))
+    //         return false;
+    //     var implGR = new GlideRecordSecure("sn_sec_int_impl");
+    //     implGR.addQuery('sys_id', implId);
+    //     implGR.query();
+    //     if (implGR.next()) {
+    //         return implGR.deleteRecord();
+    //     }
+    //     //implGR.get(implId);
+
+    // },
+
+    type: 'Implementation'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-01-28 13:06:22</sys_created_on>
+        <sys_id>fb5982b683939610b9b19b00feaad361</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Implementation</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_script_include_fb5982b683939610b9b19b00feaad361</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-07-03 06:59:34</sys_updated_on>
+    </sys_script_include>
+</record_update>

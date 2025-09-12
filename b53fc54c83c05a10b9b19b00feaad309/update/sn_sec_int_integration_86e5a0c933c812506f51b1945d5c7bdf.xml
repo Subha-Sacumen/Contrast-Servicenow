@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_sec_int_integration">
+    <sn_sec_int_integration action="INSERT_OR_UPDATE">
+        <additional_integration_types/>
+        <asset_type>infra</asset_type>
+        <banner_logo/>
+        <categories>Vulnerability Response&#13;
+Application Security</categories>
+        <configurable>true</configurable>
+        <description>Contrast-Servicenow Vulnerability Integration:&#13;
+&#13;
+Implement Vulnerability Response application within ServiceNow to assist Vulnerability&#13;
+Management teams in focusing on the most critical risks, respond faster and more efficiently&#13;
+across security and IT teams, and provide real-time visibility.</description>
+        <external_link/>
+        <help_link/>
+        <host_attributes_table/>
+        <id>com.snc.vulnerability.appvul.contrast</id>
+        <include_proof_in_vi_key>false</include_proof_in_vi_key>
+        <instance_setup_script/>
+        <integration_type>APPVUL</integration_type>
+        <ire_source_name/>
+        <is_auto_close_supported>true</is_auto_close_supported>
+        <is_chaining_required>false</is_chaining_required>
+        <is_multi_source_supported>true</is_multi_source_supported>
+        <is_reapply_ci_lookup_supported>true</is_reapply_ci_lookup_supported>
+        <lookup_by_network>false</lookup_by_network>
+        <name>Contrast Vulnerability Sync</name>
+        <order>100</order>
+        <pre_validation_script><![CDATA[(function validation(config) {
+    try {
+        if (gs.nil(config) || gs.nil(config.api_key) || gs.nil(config.authorization)) {
+            return false;
+        }
+
+        var response = new x_ntsi_contrast_ap.ContrastUtilBase().getApplicationListForValidation(null, config);
+        return response;
+    } catch (error) {
+        gs.error(error);
+        throw error;
+    }
+})(config);]]></pre_validation_script>
+        <short_description>Contrast-Servicenow Vulnerability Integration:&#13;
+&#13;
+Implement Vulnerability Response application within ServiceNow to assist Vulnerability&#13;
+Management teams in focusing on the most critical risks, respond faster and more efficiently&#13;
+across security and IT teams, and provide real-time visibility.</short_description>
+        <source/>
+        <sys_class_name>sn_sec_int_integration</sys_class_name>
+        <sys_created_by>subha.u@sacumen.com</sys_created_by>
+        <sys_created_on>2024-08-14 05:59:44</sys_created_on>
+        <sys_id>86e5a0c933c812506f51b1945d5c7bdf</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>Contrast Vulnerability Sync</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sn_sec_int_integration_86e5a0c933c812506f51b1945d5c7bdf</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-07-03 11:35:46</sys_updated_on>
+        <validation_script><![CDATA[(function validation(configId) {
+	
+    var valid = false;
+    try {
+        var response = new x_ntsi_contrast_ap.ContrastUtilBase().getApplicationListForValidation(configId, configId);
+		if (response.getStatusCode() == 200) {
+            valid = true;
+        } else {
+            gs.addErrorMessage('Contrast Application Vulnerability credential validation failed');
+        }
+        var impl = new GlideRecord('sn_sec_int_impl');
+        if (impl.get(configId)) {
+            impl.setValue('validation_status', valid ? 'valid' : 'invalid');
+            impl.update();
+        }
+        return response;
+    } catch (error) {
+        gs.error(error);
+        throw error;
+    }
+})(sn_sec_int_impl);]]></validation_script>
+    </sn_sec_int_integration>
+</record_update>
