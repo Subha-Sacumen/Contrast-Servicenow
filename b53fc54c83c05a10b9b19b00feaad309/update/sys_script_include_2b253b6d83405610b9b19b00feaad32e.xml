@@ -26,7 +26,8 @@ ContrastAppListIntegrationJsonSAST.prototype = Object.extendsObject(sn_vul.Appli
                 var arr = [];
                 for (var a in responseContent) {
                     var pageNum = 0;
-                    
+                    for (var page_count = 0; page_count < 10000; page_count++) {
+
                         var vulresp = new x_ntsi_contrast_ap.ContrastUtilBase().getSASTVulnerabilities(this.IMPLEMENTATION, responseContent[a].id, pageNum);
                         var rtnresp = JSON.parse(vulresp.getBody());
                         var rtnValue = vulresp.getBody();
@@ -58,7 +59,7 @@ ContrastAppListIntegrationJsonSAST.prototype = Object.extendsObject(sn_vul.Appli
                             pageNum++;
                         }
 
-                   
+                    }
                     //Generate object for Application 
                     var appObj = {
                         source_app_id: responseContent[a].id + "",
@@ -108,13 +109,13 @@ ContrastAppListIntegrationJsonSAST.prototype = Object.extendsObject(sn_vul.Appli
         <sys_created_by>subha.u@sacumen.com</sys_created_by>
         <sys_created_on>2024-08-16 10:20:56</sys_created_on>
         <sys_id>2b253b6d83405610b9b19b00feaad32e</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_name>ContrastAppListIntegrationJsonSAST</sys_name>
         <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
         <sys_policy/>
         <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
         <sys_update_name>sys_script_include_2b253b6d83405610b9b19b00feaad32e</sys_update_name>
         <sys_updated_by>subha.udhayakumar</sys_updated_by>
-        <sys_updated_on>2025-09-12 09:56:38</sys_updated_on>
+        <sys_updated_on>2025-09-12 12:58:08</sys_updated_on>
     </sys_script_include>
 </record_update>
