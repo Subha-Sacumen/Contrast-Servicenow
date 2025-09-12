@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>ebb5d3a59730a6106b73be6de053aff5</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_vul_int_data_src">
+    <sn_vul_int_data_src action="INSERT_OR_UPDATE">
+        <ds_group_number>0</ds_group_number>
+        <last_used>2025-09-12 12:30:19</last_used>
+        <sn_vul_integration display_value="Contrast SAST List Integration">4d34ff2d83405610b9b19b00feaad39c</sn_vul_integration>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-04-09 11:01:49</sys_created_on>
+        <sys_data_source display_value="Contrast Application List Json Sast">91c5fbad83405610b9b19b00feaad34e</sys_data_source>
+        <sys_domain>global</sys_domain>
+        <sys_id>ebb5d3a59730a6106b73be6de053aff5</sys_id>
+        <sys_mod_count>152</sys_mod_count>
+        <sys_updated_by>VR.System</sys_updated_by>
+        <sys_updated_on>2025-09-12 12:30:19</sys_updated_on>
+    </sn_vul_int_data_src>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-09-12 12:33:11</sys_created_on>
+        <sys_id>3aa2837bc3332650fc40382a0501314e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Contrast Application List Json Sast</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_metadata_link_3aa2837bc3332650fc40382a0501314e</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-12 12:33:11</sys_updated_on>
+        <tablename>sn_vul_int_data_src</tablename>
+    </sys_metadata_link>
+</record_update>

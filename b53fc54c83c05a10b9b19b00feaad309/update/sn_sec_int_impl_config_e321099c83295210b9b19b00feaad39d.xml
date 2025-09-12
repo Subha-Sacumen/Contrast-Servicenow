@@ -8,14 +8,14 @@
         <sys_created_on>2024-10-25 13:36:16</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>e321099c83295210b9b19b00feaad39d</sys_id>
-        <sys_mod_count>66</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
         <sys_policy/>
         <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
         <sys_update_name>sn_sec_int_impl_config_e321099c83295210b9b19b00feaad39d</sys_update_name>
         <sys_updated_by>subha.udhayakumar</sys_updated_by>
-        <sys_updated_on>2025-09-10 06:18:55</sys_updated_on>
-        <value/>
+        <sys_updated_on>2025-09-12 09:52:05</sys_updated_on>
+        <value>RgkGf4ue7mP37qi6LFmZYlJ7kcl3u8MR</value>
     </sn_sec_int_impl_config>
 </record_update>
