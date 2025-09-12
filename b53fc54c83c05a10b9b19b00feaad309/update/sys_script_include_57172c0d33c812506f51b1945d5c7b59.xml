@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_ntsi_contrast_ap.ContrastUtilBase</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ContrastUtilBase</name>
+        <script><![CDATA[var ContrastUtilBase = Class.create();
+ContrastUtilBase.prototype = {
+    initialize: function() {},
+    fetchAdditionalInfo: function(configId, name, params) {
+        return this._makeRestCallJSON(configId, name, null, params);
+    },
+    getAttachment: function(attachmentGr) {
+        var attachment = new GlideSysAttachment();
+        var payload = attachment.getContent(attachmentGr);
+        return JSON.parse(payload);
+    },
+
+    getDetailReport: function(configId, buildId) {
+        return this._makeRestCall(configId, 'Detailed report', {
+            build_id: buildId
+        });
+    },
+
+    getApplicationList: function(configId) {
+        return this._makeRestCall(configId, 'Application list');
+    },
+
+    getScanSummaryRecord: function(configId, app_uid, buildId) {
+        var params;
+        if (!gs.nil(buildId)) {
+            params = {
+                build_id: buildId
+            };
+        }
+        return this._makeRestCallJSON(configId, 'Scan Summary', params, {
+            app_guid: app_uid
+        });
+    },
+
+    getAuthorizationDetails: function() {
+        var gri = new GlideRecord('sn_sec_int_impl_config');
+        gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration.name=authorization');
+        gri.query();
+        if (gri.next()) {
+            return gri.value; 
+        } else {
+            return '';
+        }
+    },
+
+    getApiKeyDetails: function() {
+        var gri = new GlideRecord('sn_sec_int_impl_config');
+        gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration.name=api_key');
+        gri.query();
+        if (gri.next()) {
+            return gri.value; 
+        } else {
+            return '';
+        }
+    },
+    getApiURLDetails: function() {
+        var gri = new GlideRecord('sn_sec_int_impl_config');
+        gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration.name=contrast_url');
+        gri.query();
+        if (gri.next()) {
+            return gri.value;
+        } else {
+            return '';
+        }
+    },
+    getApiORGDetails: function() {
+        var gri = new GlideRecord('sn_sec_int_impl_config');
+        gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration.name=org_id');
+        gri.query();
+        if (gri.next()) {
+            return gri.value; 
+        } else {
+            return '';
+        }
+    },
+
+    //Validation script
+    getApplicationListForValidation: function(implementationId) {
+
+        var endPoint;
+        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/ng/" + this.getApiORGDetails() + "/applications";
+        //Load REST API
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+        r.setEndpoint(endPoint);
+        r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+        r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
+        r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
+        //r.setHttpTimeout(30000);
+        var response = r.execute(); // Execute API
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+
+        //Validate Response
+        if (httpStatus == 200) {
+            return this.getApplicationListForValidationSAST(implementationId);
+        } else {
+            return response;
+        }
+    },
+
+    getApplicationListForValidationSAST: function(implementationId) {
+        var endPoint;
+        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/sast/organizations/" + this.getApiORGDetails() + "/projects";
+        //Load REST API
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+        r.setEndpoint(endPoint);
+        r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+        r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
+        r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
+        //r.setHttpTimeout(30000);
+
+        return r.execute(); // Execute API
+    },
+
+    //RUN API
+    triggerAPI: function(implementationId) {
+        var endPoint;
+        //Get API EndPoint val
+        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/ng/" + this.getApiORGDetails() + "/applications";
+
+        //Load REST API
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+        r.setEndpoint(endPoint);
+        r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+        r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
+        r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
+        r.setHttpTimeout(30000);
+        return r.execute(); // Execute API, validation is there in retrieveData function
+    },
+    getIASTVulnerabilities: function(implementationId, appId) {
+        var endPoint;
+        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/ng/" + this.getApiORGDetails() + "/traces/" + appId + "//filter";
+        //Load REST API
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG-POST');
+        r.setEndpoint(endPoint);
+        //r.setRequestHeader('User-Agent',gs.getProperty('glide.buildtag.last'));
+        var req = new GlideDateTime();
+        var req_yesDay = new GlideDateTime();
+        req_yesDay.addDaysUTC(-7);
+        var objBody = {
+            "startDate": req_yesDay.getNumericValue(),
+            "endDate": req.getNumericValue()
+        };
+
+        r.setRequestBody(JSON.stringify(objBody));
+
+        r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
+        r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
+        r.setRequestHeader('Content-Type', "application/json");
+        r.setQueryParameter('limit', 100);
+       // r.setHttpTimeout(30000);
+        return r.execute(); //validation is there in retrieveData function
+    },
+    //RUN API
+    triggerAPISAST: function(implementationId) {
+        var endPoint;
+        //Load ENDPOINT
+        var ScanTimeAfter = new GlideDate();
+        ScanTimeAfter.addDaysUTC(-8);
+        ScanTimeAfter = ScanTimeAfter + "T00:00:00Z";
+        var ScanTimeBefore = new GlideDate() + "T00:00:00Z";
+        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/sast/organizations/" + this.getApiORGDetails() + "/projects?size=2000&lastScanTimeAfter=" + ScanTimeAfter + "&lastScanTimeBefore" + ScanTimeBefore;
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+        r.setEndpoint(endPoint);
+        r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+        r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
+        r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
+
+       // r.setHttpTimeout(30000);
+        return r.execute(); ////validation is there in retrieveData function
+    },
+    getSASTVulnerabilities: function(implementationId, appId, pageNumber) {
+        var endPoint;
+        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/sast/organizations/" + this.getApiORGDetails() + "/projects/" + appId + "/results?page=" + pageNumber;
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+        r.setEndpoint(endPoint);
+        r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+        r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
+        r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
+        //r.setHttpTimeout(30000);
+        return r.execute();//validation is there in retrieveData function
+    },
+    getSASTCWEID: function(implementationId, appId) {
+        var endPoint;
+
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+        r.setEndpoint(appId);
+        r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+        r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
+        r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
+        //r.setHttpTimeout(30000);
+        return r.execute();
+    },
+
+
+    type: 'ContrastUtilBase'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>subha.u@sacumen.com</sys_created_by>
+        <sys_created_on>2024-08-14 06:05:40</sys_created_on>
+        <sys_id>57172c0d33c812506f51b1945d5c7b59</sys_id>
+        <sys_mod_count>118</sys_mod_count>
+        <sys_name>ContrastUtilBase</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_script_include_57172c0d33c812506f51b1945d5c7b59</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-01 05:04:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

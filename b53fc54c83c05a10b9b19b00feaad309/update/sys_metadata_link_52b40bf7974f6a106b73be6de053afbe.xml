@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload.demo</directory>
+        <documentkey>203a6522c37ea650fc40382a05013154</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_vul_app_vulnerable_item"&gt;
+    &lt;sn_vul_app_vulnerable_item action="INSERT_OR_UPDATE"&gt;
+        &lt;access_to_internal_data/&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;affected_functionality/&gt;
+        &lt;affected_parameter/&gt;
+        &lt;affected_url/&gt;
+        &lt;age_closed&gt;0&lt;/age_closed&gt;
+        &lt;age_duration&gt;1970-01-18 05:55:00&lt;/age_duration&gt;
+        &lt;app_vul_scan_summary display_value=""&gt;6c3a6522c37ea650fc40382a05013153&lt;/app_vul_scan_summary&gt;
+        &lt;application_module/&gt;
+        &lt;application_release display_value="webgoat-pavanr"&gt;a83a6522c37ea650fc40382a05013153&lt;/application_release&gt;
+        &lt;assessment_request/&gt;
+        &lt;assigned_to/&gt;
+        &lt;assignment_group/&gt;
+        &lt;assignment_rule/&gt;
+        &lt;assignment_type&gt;1&lt;/assignment_type&gt;
+        &lt;backup_state&gt;0&lt;/backup_state&gt;
+        &lt;backup_substate/&gt;
+        &lt;business_application/&gt;
+        &lt;business_criticality&gt;3&lt;/business_criticality&gt;
+        &lt;category_name&gt;clickjacking-control-missing&lt;/category_name&gt;
+        &lt;change_approval/&gt;
+        &lt;close_notes/&gt;
+        &lt;closed_at/&gt;
+        &lt;closed_by/&gt;
+        &lt;cmdb_ci display_value="webgoat-pavanr"&gt;d9c3a9a6973aae106b73be6de053aff4&lt;/cmdb_ci&gt;
+        &lt;compliance_program_impacted/&gt;
+        &lt;complies_with_policy&gt;not_applicable&lt;/complies_with_policy&gt;
+        &lt;defer_count&gt;0&lt;/defer_count&gt;
+        &lt;defer_extend_count&gt;0&lt;/defer_extend_count&gt;
+        &lt;dependency_type/&gt;
+        &lt;description&gt;Pages Without Anti-Clickjacking Controls detected&lt;/description&gt;
+        &lt;effort/&gt;
+        &lt;evidence/&gt;
+        &lt;first_found/&gt;
+        &lt;has_vulnerable_methods&gt;false&lt;/has_vulnerable_methods&gt;
+        &lt;ignore_date/&gt;
+        &lt;ignore_expiration/&gt;
+        &lt;ignore_reason/&gt;
+        &lt;ignored_by/&gt;
+        &lt;impact/&gt;
+        &lt;impacts_compliance_program&gt;2&lt;/impacts_compliance_program&gt;
+        &lt;in_effort&gt;no&lt;/in_effort&gt;
+        &lt;integration display_value=""&gt;Contrast IAST List Integration&lt;/integration&gt;
+        &lt;integration_instance display_value="Contrast Application Vulnerability"&gt;bacbac81330c12506f51b1945d5c7bf7&lt;/integration_instance&gt;
+        &lt;integration_run display_value="VINTRUN0001600"&gt;18a329a6973aae106b73be6de053af31&lt;/integration_run&gt;
+        &lt;is_in_group&gt;false&lt;/is_in_group&gt;
+        &lt;last_found/&gt;
+        &lt;last_found_dt_tm&gt;2025-07-20 15:51:26&lt;/last_found_dt_tm&gt;
+        &lt;last_opened&gt;2025-07-20&lt;/last_opened&gt;
+        &lt;last_seen_scan_app_version/&gt;
+        &lt;last_seen_scan_lifecycle_stage/&gt;
+        &lt;last_state_changed_on&gt;2025-07-20 15:51:26&lt;/last_state_changed_on&gt;
+        &lt;line_number/&gt;
+        &lt;location/&gt;
+        &lt;login_required/&gt;
+        &lt;number&gt;AVIT0091477&lt;/number&gt;
+        &lt;opened_at&gt;2025-07-20 07:00:00&lt;/opened_at&gt;
+        &lt;opened_by display_value="VR System"&gt;c98e5bb253333200e8f9f745911c087a&lt;/opened_by&gt;
+        &lt;originating_scan_app_version/&gt;
+        &lt;originating_scan_lifecycle_stage/&gt;
+        &lt;package_id/&gt;
+        &lt;planned_version/&gt;
+        &lt;priority/&gt;
+        &lt;product_model/&gt;
+        &lt;project_branch/&gt;
+        &lt;project_name&gt;webgoat-pavanr&lt;/project_name&gt;
+        &lt;recommendation/&gt;
+        &lt;remediation_commitment_date/&gt;
+        &lt;remediation_plan/&gt;
+        &lt;reopened&gt;false&lt;/reopened&gt;
+        &lt;resolution_date/&gt;
+        &lt;resolution_reason/&gt;
+        &lt;resolved_by/&gt;
+        &lt;risk_rating&gt;6&lt;/risk_rating&gt;
+        &lt;risk_score&gt;0&lt;/risk_score&gt;
+        &lt;scan_type&gt;interactive&lt;/scan_type&gt;
+        &lt;security_team_contact/&gt;
+        &lt;short_description&gt;Contrast Security CWE - 693 detected on webgoat-pavanr&lt;/short_description&gt;
+        &lt;source&gt;Contrast Security&lt;/source&gt;
+        &lt;source_additional_info/&gt;
+        &lt;source_additional_info_string/&gt;
+        &lt;source_avit_id&gt;8U34-Z0HK-IN31-9JRS&lt;/source_avit_id&gt;
+        &lt;source_exploit/&gt;
+        &lt;source_finding_status&gt;Reported&lt;/source_finding_status&gt;
+        &lt;source_link&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/0f09a794-2bfe-4e1d-acb5-e0d0e5edcf15/vulns/8U34-Z0HK-IN31-9JRS&lt;/source_link&gt;
+        &lt;source_mitigation_status/&gt;
+        &lt;source_notes/&gt;
+        &lt;source_recommendation&gt;&lt;![CDATA[Using the X-Frame-Options header
+All major modern browsers honor a header, called X-Frame-Options. This header instructs browsers about a page&amp;#39;s preferences regarding being framed. Not setting this header has no effect, which means that the page is allowed to be framed from any web site. There are 3 possible values that can help restrict framing:
+
+    DENY. When set to DENY, no pages may frame this page.
+    SAMEORIGIN. When set to SAMEORIGIN, any page outside the origin of the hosting page may not frame this resource.
+    ALLOW-FROM [URI]. The ALLOW-FROM setting, supported by Internet Explorer and Firefox, allows a URI to frame the given content. It&amp;#39;s not known if this feature will eventually be adopted by Chrome, Safari, or other WebKit-based browsers. However, because numerous browsers don&amp;#39;t support ALLOW-FROM, and it breaks X-Frame-Options in those browsers (meaning it allows any site to frame those pages), we recommend avoiding the use of ALLOW-FROM.
+
+If Contrast sees a setting of X-Frame-Options of DENY or SAMEORIGIN, it will not report this issue.
+
+]]&gt;&lt;/source_recommendation&gt;
+        &lt;source_references/&gt;
+        &lt;source_remediation_status&gt;Reported&lt;/source_remediation_status&gt;
+        &lt;source_request/&gt;
+        &lt;source_resolved_date&gt;2025-07-20 15:51:26&lt;/source_resolved_date&gt;
+        &lt;source_response/&gt;
+        &lt;source_sdlc_status/&gt;
+        &lt;source_severity&gt;5&lt;/source_severity&gt;
+        &lt;source_target_fix_date/&gt;
+        &lt;source_vulnerability_explanation&gt;&lt;![CDATA[We observed 29 pages without sufficient anti-clickjacking controls:]]&gt;&lt;/source_vulnerability_explanation&gt;
+        &lt;source_vulnerability_summary&gt;&lt;![CDATA[The application doesn&amp;#39;t apply anti-framing controls to the given page. Not applying these controls will allow it to be
+framed by other websites. This can present a few security issues, but the chief concern is that framed pages may be used in
+Clickjacking attacks.
+Clickjacking (also called UI Redress) is an attack whereby an attacker can trick a user into clicking on something different
+from what it appears they are clicking on. Most attacks will first build a page that entices the user to click on it - for scandalous
+pictures, monetary rewards, and other promises. The buttons and links on this page are carefully placed so that they overlap with
+buttons, links or other items on a second page that gets layered on top of the first one.
+The problem for the victim in this scenario is that the link that they&amp;#39;d like to click for the promised rewards on the evil page
+ is actually &amp;#34;beneath&amp;#34; a translucent, second page which has been framed into the HTML document. Thus, when they intend to click
+ on &amp;#34;Collect Your Prize!&amp;#34;, they&amp;#39;re really clicking on Transfer Your Money!, or similar.
+Numerous real-life Clickjacking attacks have caused damage to Adobe Flash Player, and numerous websites including Facebook,
+Twitter, YouTube, and others.
+X-Frame-Options header can be used to prevent framing of a web page. Details about this control can be found in the How to fix tab.This anti-framing control was not found in the HTTP response.]]&gt;&lt;/source_vulnerability_summary&gt;
+        &lt;state&gt;1&lt;/state&gt;
+        &lt;state_inheritance_count&gt;0&lt;/state_inheritance_count&gt;
+        &lt;steps_to_reproduce/&gt;
+        &lt;substate/&gt;
+        &lt;sys_class_name&gt;sn_vul_app_vulnerable_item&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;VR.System&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-07-20 15:51:26&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_id&gt;203a6522c37ea650fc40382a05013154&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;VR.System&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-07-20 15:51:30&lt;/sys_updated_on&gt;
+        &lt;technical_details/&gt;
+        &lt;ttr_applied_rule/&gt;
+        &lt;ttr_calculated&gt;false&lt;/ttr_calculated&gt;
+        &lt;ttr_status&gt;no_target&lt;/ttr_status&gt;
+        &lt;ttr_target_date/&gt;
+        &lt;use_ttr&gt;true&lt;/use_ttr&gt;
+        &lt;vulnerability display_value="Contrast Security CWE - 693"&gt;2f18e0bf9709e6106b73be6de053af30&lt;/vulnerability&gt;
+        &lt;vulnerable_links&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/0f09a794-2bfe-4e1d-acb5-e0d0e5edcf15/vulns/8U34-Z0HK-IN31-9JRS&lt;/vulnerable_links&gt;
+        &lt;vulnerable_method_info/&gt;
+        &lt;work_notes/&gt;
+    &lt;/sn_vul_app_vulnerable_item&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-08-06 05:55:03</sys_created_on>
+        <sys_id>52b40bf7974f6a106b73be6de053afbe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AVIT0091477</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_metadata_link_52b40bf7974f6a106b73be6de053afbe</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-08-06 05:55:03</sys_updated_on>
+        <tablename>sn_vul_app_vulnerable_item</tablename>
+    </sys_metadata_link>
+</record_update>

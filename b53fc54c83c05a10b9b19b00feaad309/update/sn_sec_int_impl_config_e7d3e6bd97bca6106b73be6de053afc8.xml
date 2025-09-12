@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_sec_int_impl_config">
+    <sn_sec_int_impl_config action="INSERT_OR_UPDATE">
+        <configuration display_value="manage_exceptions_in_snow">fd8b0c67976c6a506b73be6de053afdb</configuration>
+        <implementation display_value="Contrast Application Vulnerability">bacbac81330c12506f51b1945d5c7bf7</implementation>
+        <password_value/>
+        <sys_class_name>sn_sec_int_impl_config</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-04-10 02:02:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>e7d3e6bd97bca6106b73be6de053afc8</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sn_sec_int_impl_config_e7d3e6bd97bca6106b73be6de053afc8</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-10 06:18:56</sys_updated_on>
+        <value/>
+    </sn_sec_int_impl_config>
+</record_update>

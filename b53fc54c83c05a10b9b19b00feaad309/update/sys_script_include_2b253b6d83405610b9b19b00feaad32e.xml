@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_ntsi_contrast_ap.ContrastAppListIntegrationJsonSAST</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ContrastAppListIntegrationJsonSAST</name>
+        <script><![CDATA[var ContrastAppListIntegrationJsonSAST = Class.create();
+ContrastAppListIntegrationJsonSAST.prototype = Object.extendsObject(sn_vul.ApplicationVulnerabilityIntegrationBase, {
+
+    UTIL: new x_ntsi_contrast_ap.ContrastUtilBase(),
+
+    retrieveData: function() {
+        var resp = new x_ntsi_contrast_ap.ContrastUtilBase().triggerAPISAST(this.IMPLEMENTATION); //getApplicationListForValidation
+        var responseBody = resp.getBody();
+
+        if (resp.getStatusCode() == 200) {
+            var appURL = new x_ntsi_contrast_ap.ContrastUtilBase().getApiURLDetails();
+
+            try {
+
+                var contentjson = JSON.parse(responseBody);
+                var responseContent = contentjson.content;
+                var arr = [];
+                for (var a in responseContent) {
+                    var pageNum = 0;
+                    //for (var b = 0; b < 10000; b++) {
+
+                        var vulresp = new x_ntsi_contrast_ap.ContrastUtilBase().getSASTVulnerabilities(this.IMPLEMENTATION, responseContent[a].id, pageNum);
+                        var rtnresp = JSON.parse(vulresp.getBody());
+                        var rtnValue = vulresp.getBody();
+                        if (rtnValue == null) {
+                            break;
+                        }
+                        if (rtnValue.indexOf('numberOfElements') == -1) {
+                            break;
+                        }
+
+                        if (rtnresp.numberOfElements == undefined || rtnresp.numberOfElements == null || rtnresp.numberOfElements == "" || rtnresp.numberOfElements == "null" || rtnresp.numberOfElements == 0) {
+                            pageNum = 0;
+                            break;
+                        } else {
+                            if (vulresp.getStatusCode() == 200) {
+                                var vul = JSON.parse(vulresp.getBody());
+                                var trace = vul.content;
+                                for (var a1 in trace) {
+                                    var obj = trace[a1];
+                                    delete obj.locations;
+                                    delete obj.codeFlows;
+                                    obj.source_link = "https://" + appURL + "/Contrast/api/sast/organizations/" + trace[a1].organizationId + "/projects/" + trace[a1].projectId + "/results/" + trace[a1].id;
+                                    obj.name = responseContent[a].name;
+                                    if (trace[a1].status != "REMEDIATED") {
+                                        arr.push(obj);
+                                    }
+                                }
+                            }
+                            pageNum++;
+                        }
+
+                    //}
+                    //Generate object for Application 
+                    var appObj = {
+                        source_app_id: responseContent[a].id + "",
+                        app_name: responseContent[a].name + "",
+                        description: responseContent[a].name + "",
+                        source_app_guid: responseContent[a].id + "",
+                    };
+
+                    var result = this.AVR_API.createOrUpdateApp(appObj);
+
+                }
+                arr.join();
+                var content = {
+                    "content": arr
+                };
+
+                //Generate Attachment with Response payload to trigger data source
+                var attachmentGr = new GlideSysAttachment();
+                var fileName = this.integrationGr.name + "_" + new GlideDateTime().toString() + ".json";
+                var sysId = attachmentGr.write(this.integrationProcessGr, fileName, "json", JSON.stringify(content));
+                var obj1 = {
+                    contents: sysId,
+                    contentType: "sys_attachment",
+                    extension: "json"
+                };
+
+                return obj1;
+            } catch (e) {
+                gs.error("Failed to parse JSON: " + e.message);
+                // Optionally handle the error or take fallback action
+            }
+        } else {
+            gs.error("API Failed with status code: " + resp.getStatusCode());
+            return null;
+        }
+    },
+
+    shouldRetry: function(process) {
+        return true;
+    },
+
+
+
+    type: 'ContrastAppListIntegrationJsonSAST'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>subha.u@sacumen.com</sys_created_by>
+        <sys_created_on>2024-08-16 10:20:56</sys_created_on>
+        <sys_id>2b253b6d83405610b9b19b00feaad32e</sys_id>
+        <sys_mod_count>89</sys_mod_count>
+        <sys_name>ContrastAppListIntegrationJsonSAST</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_script_include_2b253b6d83405610b9b19b00feaad32e</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-11 03:09:25</sys_updated_on>
+    </sys_script_include>
+</record_update>

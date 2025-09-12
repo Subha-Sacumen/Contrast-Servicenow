@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload.demo</directory>
+        <documentkey>106e1571973aea106b73be6de053af3a</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_vul_app_vulnerable_item">
+    <sn_vul_app_vulnerable_item action="INSERT_OR_UPDATE">
+        <access_to_internal_data/>
+        <active>true</active>
+        <affected_functionality/>
+        <affected_parameter/>
+        <affected_url/>
+        <age_closed>0</age_closed>
+        <age_duration>1970-01-20 05:55:00</age_duration>
+        <app_vul_scan_summary display_value="">df4d6f41c3fe2250fc40382a05013133</app_vul_scan_summary>
+        <application_module/>
+        <application_release display_value="New addition">1f4d6f41c3fe2250fc40382a05013133</application_release>
+        <assessment_request/>
+        <assigned_to/>
+        <assignment_group/>
+        <assignment_rule/>
+        <assignment_type>1</assignment_type>
+        <backup_state>0</backup_state>
+        <backup_substate/>
+        <business_application/>
+        <business_criticality>3</business_criticality>
+        <category_name>OPT.JAVA.SEC_JAVA.InformationExposureThroughErrorMessage</category_name>
+        <change_approval/>
+        <close_notes/>
+        <closed_at/>
+        <closed_by/>
+        <cmdb_ci display_value="New addition">8c3d2b41c3fe2250fc40382a0501314b</cmdb_ci>
+        <compliance_program_impacted/>
+        <complies_with_policy>not_applicable</complies_with_policy>
+        <defer_count>0</defer_count>
+        <defer_extend_count>0</defer_extend_count>
+        <dependency_type/>
+        <description>Information Exposure Through Error Message in WebGoat-main/src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6b.java</description>
+        <effort/>
+        <evidence/>
+        <first_found/>
+        <has_vulnerable_methods>false</has_vulnerable_methods>
+        <ignore_date/>
+        <ignore_expiration/>
+        <ignore_reason/>
+        <ignored_by/>
+        <impact/>
+        <impacts_compliance_program>2</impacts_compliance_program>
+        <in_effort>no</in_effort>
+        <integration display_value="Contrast Vulnerability Sync">86e5a0c933c812506f51b1945d5c7bdf</integration>
+        <integration_instance display_value="Contrast Application Vulnerability">bacbac81330c12506f51b1945d5c7bf7</integration_instance>
+        <integration_run display_value="VINTRUN0001596">684e1171973aea106b73be6de053af30</integration_run>
+        <is_in_group>false</is_in_group>
+        <last_found/>
+        <last_found_dt_tm>2025-07-18 07:04:22</last_found_dt_tm>
+        <last_opened>2025-07-18</last_opened>
+        <last_seen_scan_app_version/>
+        <last_seen_scan_lifecycle_stage/>
+        <last_state_changed_on>2025-07-18 07:04:22</last_state_changed_on>
+        <line_number/>
+        <location/>
+        <login_required/>
+        <number>AVIT0091201</number>
+        <opened_at>2025-07-18 07:00:00</opened_at>
+        <opened_by display_value="VR System">c98e5bb253333200e8f9f745911c087a</opened_by>
+        <originating_scan_app_version/>
+        <originating_scan_lifecycle_stage/>
+        <package_id/>
+        <planned_version/>
+        <priority/>
+        <product_model/>
+        <project_branch/>
+        <project_name>New addition</project_name>
+        <recommendation/>
+        <remediation_commitment_date/>
+        <remediation_plan/>
+        <reopened>false</reopened>
+        <resolution_date/>
+        <resolution_reason/>
+        <resolved_by/>
+        <risk_rating>6</risk_rating>
+        <risk_score>0</risk_score>
+        <scan_type>static</scan_type>
+        <security_team_contact/>
+        <short_description>Contrast Security CWE - 209 detected on New addition</short_description>
+        <source>Contrast Security</source>
+        <source_additional_info/>
+        <source_additional_info_string/>
+        <source_avit_id>6877718f507ccd8b606cd70a</source_avit_id>
+        <source_exploit/>
+        <source_finding_status>REPORTED</source_finding_status>
+        <source_link>https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/scans/72db8828-447e-4956-a43c-d49208a26586/vulnerabilities/6877718f507ccd8b606cd70a</source_link>
+        <source_mitigation_status/>
+        <source_notes/>
+        <source_recommendation/>
+        <source_references/>
+        <source_remediation_status>REPORTED</source_remediation_status>
+        <source_request/>
+        <source_resolved_date>2025-07-18 07:04:22</source_resolved_date>
+        <source_response/>
+        <source_sdlc_status/>
+        <source_severity>2</source_severity>
+        <source_target_fix_date/>
+        <source_vulnerability_explanation/>
+        <source_vulnerability_summary/>
+        <state>1</state>
+        <state_inheritance_count>0</state_inheritance_count>
+        <steps_to_reproduce/>
+        <substate/>
+        <sys_class_name>sn_vul_app_vulnerable_item</sys_class_name>
+        <sys_created_by>VR.System</sys_created_by>
+        <sys_created_on>2025-07-18 07:04:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>106e1571973aea106b73be6de053af3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>VR.System</sys_updated_by>
+        <sys_updated_on>2025-07-18 07:04:22</sys_updated_on>
+        <technical_details/>
+        <ttr_applied_rule/>
+        <ttr_calculated>false</ttr_calculated>
+        <ttr_status>no_target</ttr_status>
+        <ttr_target_date/>
+        <use_ttr>true</use_ttr>
+        <vulnerability display_value="Contrast Security CWE - 209">4ba9166f97381e106b73be6de053af3a</vulnerability>
+        <vulnerable_links>https://teamserver-staging.contsec.com/Contrast/api/sast/organizations/119844af-42ff-4293-b06b-81d426e9a4a9/projects/72db8828-447e-4956-a43c-d49208a26586/results/6877718f507ccd8b606cd70a</vulnerable_links>
+        <vulnerable_method_info/>
+        <work_notes/>
+    </sn_vul_app_vulnerable_item>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-08-06 05:55:02</sys_created_on>
+        <sys_id>79b40bf7974f6a106b73be6de053af26</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AVIT0091201</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_metadata_link_79b40bf7974f6a106b73be6de053af26</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-08-06 05:55:02</sys_updated_on>
+        <tablename>sn_vul_app_vulnerable_item</tablename>
+    </sys_metadata_link>
+</record_update>

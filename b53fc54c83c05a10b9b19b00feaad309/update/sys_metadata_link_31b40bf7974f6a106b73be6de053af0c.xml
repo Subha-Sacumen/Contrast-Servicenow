@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload.demo</directory>
+        <documentkey>0c3a2522c37ea650fc40382a050131d9</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_vul_app_vulnerable_item"&gt;
+    &lt;sn_vul_app_vulnerable_item action="INSERT_OR_UPDATE"&gt;
+        &lt;access_to_internal_data/&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;affected_functionality/&gt;
+        &lt;affected_parameter/&gt;
+        &lt;affected_url/&gt;
+        &lt;age_closed&gt;0&lt;/age_closed&gt;
+        &lt;age_duration&gt;1970-01-18 05:55:00&lt;/age_duration&gt;
+        &lt;app_vul_scan_summary display_value=""&gt;c43a2522c37ea650fc40382a050131d9&lt;/app_vul_scan_summary&gt;
+        &lt;application_module/&gt;
+        &lt;application_release display_value="xsstesting-contrast-cargo-cats-imageservice"&gt;043a2522c37ea650fc40382a050131d9&lt;/application_release&gt;
+        &lt;assessment_request/&gt;
+        &lt;assigned_to/&gt;
+        &lt;assignment_group/&gt;
+        &lt;assignment_rule/&gt;
+        &lt;assignment_type&gt;1&lt;/assignment_type&gt;
+        &lt;backup_state&gt;0&lt;/backup_state&gt;
+        &lt;backup_substate/&gt;
+        &lt;business_application/&gt;
+        &lt;business_criticality&gt;3&lt;/business_criticality&gt;
+        &lt;category_name&gt;path-traversal&lt;/category_name&gt;
+        &lt;change_approval/&gt;
+        &lt;close_notes/&gt;
+        &lt;closed_at/&gt;
+        &lt;closed_by/&gt;
+        &lt;cmdb_ci display_value="xsstesting-contrast-cargo-cats-imageservice"&gt;f1b369a6973aae106b73be6de053afe1&lt;/cmdb_ci&gt;
+        &lt;compliance_program_impacted/&gt;
+        &lt;complies_with_policy&gt;not_applicable&lt;/complies_with_policy&gt;
+        &lt;defer_count&gt;0&lt;/defer_count&gt;
+        &lt;defer_extend_count&gt;0&lt;/defer_extend_count&gt;
+        &lt;dependency_type/&gt;
+        &lt;description&gt;Path Traversal from "path" Parameter on "/getphoto" page&lt;/description&gt;
+        &lt;effort/&gt;
+        &lt;evidence/&gt;
+        &lt;first_found/&gt;
+        &lt;has_vulnerable_methods&gt;false&lt;/has_vulnerable_methods&gt;
+        &lt;ignore_date/&gt;
+        &lt;ignore_expiration/&gt;
+        &lt;ignore_reason/&gt;
+        &lt;ignored_by/&gt;
+        &lt;impact/&gt;
+        &lt;impacts_compliance_program&gt;2&lt;/impacts_compliance_program&gt;
+        &lt;in_effort&gt;no&lt;/in_effort&gt;
+        &lt;integration display_value=""&gt;Contrast IAST List Integration&lt;/integration&gt;
+        &lt;integration_instance display_value="Contrast Application Vulnerability"&gt;bacbac81330c12506f51b1945d5c7bf7&lt;/integration_instance&gt;
+        &lt;integration_run display_value="VINTRUN0001600"&gt;18a329a6973aae106b73be6de053af31&lt;/integration_run&gt;
+        &lt;is_in_group&gt;false&lt;/is_in_group&gt;
+        &lt;last_found/&gt;
+        &lt;last_found_dt_tm&gt;2025-07-20 15:51:24&lt;/last_found_dt_tm&gt;
+        &lt;last_opened&gt;2025-07-20&lt;/last_opened&gt;
+        &lt;last_seen_scan_app_version/&gt;
+        &lt;last_seen_scan_lifecycle_stage/&gt;
+        &lt;last_state_changed_on&gt;2025-07-20 15:51:24&lt;/last_state_changed_on&gt;
+        &lt;line_number/&gt;
+        &lt;location/&gt;
+        &lt;login_required/&gt;
+        &lt;number&gt;AVIT0091442&lt;/number&gt;
+        &lt;opened_at&gt;2025-07-20 07:00:00&lt;/opened_at&gt;
+        &lt;opened_by display_value="VR System"&gt;c98e5bb253333200e8f9f745911c087a&lt;/opened_by&gt;
+        &lt;originating_scan_app_version/&gt;
+        &lt;originating_scan_lifecycle_stage/&gt;
+        &lt;package_id/&gt;
+        &lt;planned_version/&gt;
+        &lt;priority/&gt;
+        &lt;product_model/&gt;
+        &lt;project_branch/&gt;
+        &lt;project_name&gt;xsstesting-contrast-cargo-cats-imageservice&lt;/project_name&gt;
+        &lt;recommendation/&gt;
+        &lt;remediation_commitment_date/&gt;
+        &lt;remediation_plan/&gt;
+        &lt;reopened&gt;false&lt;/reopened&gt;
+        &lt;resolution_date/&gt;
+        &lt;resolution_reason/&gt;
+        &lt;resolved_by/&gt;
+        &lt;risk_rating&gt;6&lt;/risk_rating&gt;
+        &lt;risk_score&gt;0&lt;/risk_score&gt;
+        &lt;scan_type&gt;interactive&lt;/scan_type&gt;
+        &lt;security_team_contact/&gt;
+        &lt;short_description&gt;Contrast Security CWE - 22 detected on xsstesting-contrast-cargo-cats-imageservice&lt;/short_description&gt;
+        &lt;source&gt;Contrast Security&lt;/source&gt;
+        &lt;source_additional_info/&gt;
+        &lt;source_additional_info_string/&gt;
+        &lt;source_avit_id&gt;MKKF-IZGA-01NU-RNN0&lt;/source_avit_id&gt;
+        &lt;source_exploit/&gt;
+        &lt;source_finding_status&gt;Reported&lt;/source_finding_status&gt;
+        &lt;source_link&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/9c9d2333-e4d2-437c-90c2-68221ee774ad/vulns/MKKF-IZGA-01NU-RNN0&lt;/source_link&gt;
+        &lt;source_mitigation_status/&gt;
+        &lt;source_notes/&gt;
+        &lt;source_recommendation&gt;&lt;![CDATA[The application opens up a file or file I/O stream based on untrusted input. Although it&amp;#39;s not directly clear how that file is being used, this functionality could be an avenue for path traversal abuse.
+
+Here&amp;#39;s an example of a typical path traversal vulnerability:
+// C#:
+String statement &amp;#61; HttpContext.Request.Query(&amp;#34;statement&amp;#34;);
+if (!statement.EndsWith(&amp;#34;.xml&amp;#34;)) { // Validate (weakly) this file is an xml file
+	logger.Error(&amp;#34;Bad filename sent&amp;#34;);
+	return;
+}
+
+// Read the specified file
+String path &amp;#61; STATEMENT_DIR &amp;#43; statement;
+FileStream fs &amp;#61; File.Open(path, FileMode.Open);
+byte[] b &amp;#61; new byte[1024];
+int len;
+while ((len&amp;#61;fs.Read(b,0,b.Length)) &amp;gt; 0) {
+	Response.OutputStream.Write(b,0,len);
+} 
+Often, there is no filename validation at all. Either way, an attacker could abuse this functionality to view protected configuration files by passing the following value for the statement parameter:
+http://yoursite.com/app/pathTraversal?statement&amp;#61;../../../../../../web.xml
+
+To prevent attacks like this, any of the following steps could help:
+
+  Use maps to filter out invalid values. Instead of accepting input like file&amp;#61;string, accept file&amp;#61;int. That int can be a key in a Map that points to an allowed file. If the map has no corresponding value for the key given, then throw an error.
+  Strongly validate the file value. Validate the file using an allowlist or regular expression.
+Example path traversal validator:
+
+namespace Contrast;
+
+public static class SecurityUtils
+{
+    // Validate &amp;#39;statement&amp;#39; to prevent access to anything but XML files with no path
+    public static bool IsValidStatementPath(string statementPath)
+    {
+        Regex r &amp;#61; new Regex(&amp;#34;^[A-Za-z0-9]&amp;#43;\\.xml$&amp;#34;);
+        return r.IsMatch(statementPath);
+    }
+}
+
+Example usage of validator:
+
+    String statement &amp;#61; HttpContext.Request.Query(&amp;#34;statement&amp;#34;);
+    if (Contrast.SecurityUtils.IsValidStatementPath(statement))
+    {
+        // Read the file here as normal
+    }
+    else
+    {
+        // log error message
+    }
+
+See https://docs.contrastsecurity.com/admin-policymgmt.html#security$$LINK_DELIM$$https://docs.contrastsecurity.com/admin-policymgmt.html#security
+on how to add custom security controls to the Contrast policy. The validator above would be entered as:
+    System.Boolean Contrast.SecurityUtils.IsValidStatementPath(System.String*)
+
+]]&gt;&lt;/source_recommendation&gt;
+        &lt;source_references/&gt;
+        &lt;source_remediation_status&gt;Reported&lt;/source_remediation_status&gt;
+        &lt;source_request/&gt;
+        &lt;source_resolved_date&gt;2025-07-20 15:51:24&lt;/source_resolved_date&gt;
+        &lt;source_response/&gt;
+        &lt;source_sdlc_status/&gt;
+        &lt;source_severity&gt;5&lt;/source_severity&gt;
+        &lt;source_target_fix_date/&gt;
+        &lt;source_vulnerability_explanation&gt;&lt;![CDATA[We tracked the following data from &amp;#34;path&amp;#34; Parameter:&lt;br /&gt;GET /getphoto?path&amp;#61;test_cat.jpg&lt;br /&gt;...which was accessed within the following code:&lt;br /&gt;Program.&amp;lt;&amp;gt;c__DisplayClass0_0.&amp;lt;$&amp;gt;b__2(), line 99&lt;br /&gt;...and ended up being used as part of the path in the following file being opened:&lt;br /&gt;/app/uploads/test_cat.jpg]]&gt;&lt;/source_vulnerability_explanation&gt;
+        &lt;source_vulnerability_summary&gt;&lt;![CDATA[Because there is untrusted data being used as part of the file path, it may be possible for an attacker to read sensitive data or write, update, or delete arbitrary files on the container&amp;#39;s file system. The ability to write arbitrary files to the file system is also called Unrestricted or Arbitrary File Uploads.]]&gt;&lt;/source_vulnerability_summary&gt;
+        &lt;state&gt;1&lt;/state&gt;
+        &lt;state_inheritance_count&gt;0&lt;/state_inheritance_count&gt;
+        &lt;steps_to_reproduce/&gt;
+        &lt;substate/&gt;
+        &lt;sys_class_name&gt;sn_vul_app_vulnerable_item&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;VR.System&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-07-20 15:51:24&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_id&gt;0c3a2522c37ea650fc40382a050131d9&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;VR.System&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-07-20 15:51:27&lt;/sys_updated_on&gt;
+        &lt;technical_details/&gt;
+        &lt;ttr_applied_rule/&gt;
+        &lt;ttr_calculated&gt;false&lt;/ttr_calculated&gt;
+        &lt;ttr_status&gt;no_target&lt;/ttr_status&gt;
+        &lt;ttr_target_date/&gt;
+        &lt;use_ttr&gt;true&lt;/use_ttr&gt;
+        &lt;vulnerability display_value="Contrast Security CWE - 22"&gt;6ea9d26f97381e106b73be6de053afd6&lt;/vulnerability&gt;
+        &lt;vulnerable_links&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/9c9d2333-e4d2-437c-90c2-68221ee774ad/vulns/MKKF-IZGA-01NU-RNN0&lt;/vulnerable_links&gt;
+        &lt;vulnerable_method_info/&gt;
+        &lt;work_notes/&gt;
+    &lt;/sn_vul_app_vulnerable_item&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-08-06 05:55:02</sys_created_on>
+        <sys_id>31b40bf7974f6a106b73be6de053af0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AVIT0091442</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_metadata_link_31b40bf7974f6a106b73be6de053af0c</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-08-06 05:55:02</sys_updated_on>
+        <tablename>sn_vul_app_vulnerable_item</tablename>
+    </sys_metadata_link>
+</record_update>

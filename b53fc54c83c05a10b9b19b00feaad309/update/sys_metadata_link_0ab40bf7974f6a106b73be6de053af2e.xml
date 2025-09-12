@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload.demo</directory>
+        <documentkey>121be609970f2a506b73be6de053af3c</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_vul_app_vulnerable_item"&gt;
+    &lt;sn_vul_app_vulnerable_item action="INSERT_OR_UPDATE"&gt;
+        &lt;access_to_internal_data/&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;affected_functionality/&gt;
+        &lt;affected_parameter/&gt;
+        &lt;affected_url/&gt;
+        &lt;age_closed&gt;0&lt;/age_closed&gt;
+        &lt;age_duration&gt;1970-01-10 05:55:00&lt;/age_duration&gt;
+        &lt;app_vul_scan_summary display_value=""&gt;5e1be609970f2a506b73be6de053af3b&lt;/app_vul_scan_summary&gt;
+        &lt;application_module/&gt;
+        &lt;application_release display_value="pramod-app"&gt;9a1be609970f2a506b73be6de053af3b&lt;/application_release&gt;
+        &lt;assessment_request/&gt;
+        &lt;assigned_to/&gt;
+        &lt;assignment_group/&gt;
+        &lt;assignment_rule/&gt;
+        &lt;assignment_type&gt;1&lt;/assignment_type&gt;
+        &lt;backup_state&gt;0&lt;/backup_state&gt;
+        &lt;backup_substate/&gt;
+        &lt;business_application/&gt;
+        &lt;business_criticality&gt;3&lt;/business_criticality&gt;
+        &lt;category_name&gt;autocomplete-missing&lt;/category_name&gt;
+        &lt;change_approval/&gt;
+        &lt;close_notes/&gt;
+        &lt;closed_at/&gt;
+        &lt;closed_by/&gt;
+        &lt;cmdb_ci display_value="pramod-app"&gt;e666e681970f2a506b73be6de053af88&lt;/cmdb_ci&gt;
+        &lt;compliance_program_impacted/&gt;
+        &lt;complies_with_policy&gt;not_applicable&lt;/complies_with_policy&gt;
+        &lt;defer_count&gt;0&lt;/defer_count&gt;
+        &lt;defer_extend_count&gt;0&lt;/defer_extend_count&gt;
+        &lt;dependency_type/&gt;
+        &lt;description&gt;Forms Without Autocomplete Prevention detected&lt;/description&gt;
+        &lt;effort/&gt;
+        &lt;evidence/&gt;
+        &lt;first_found/&gt;
+        &lt;has_vulnerable_methods&gt;false&lt;/has_vulnerable_methods&gt;
+        &lt;ignore_date/&gt;
+        &lt;ignore_expiration/&gt;
+        &lt;ignore_reason/&gt;
+        &lt;ignored_by/&gt;
+        &lt;impact/&gt;
+        &lt;impacts_compliance_program&gt;2&lt;/impacts_compliance_program&gt;
+        &lt;in_effort&gt;no&lt;/in_effort&gt;
+        &lt;integration display_value=""&gt;Contrast IAST List Integration&lt;/integration&gt;
+        &lt;integration_instance display_value="Contrast Application Vulnerability"&gt;bacbac81330c12506f51b1945d5c7bf7&lt;/integration_instance&gt;
+        &lt;integration_run display_value="VINTRUN0001602"&gt;b8b4a20dc3cb6290fc40382a0501313c&lt;/integration_run&gt;
+        &lt;is_in_group&gt;false&lt;/is_in_group&gt;
+        &lt;last_found/&gt;
+        &lt;last_found_dt_tm&gt;2025-07-28 14:59:49&lt;/last_found_dt_tm&gt;
+        &lt;last_opened&gt;2025-07-28&lt;/last_opened&gt;
+        &lt;last_seen_scan_app_version/&gt;
+        &lt;last_seen_scan_lifecycle_stage/&gt;
+        &lt;last_state_changed_on&gt;2025-07-28 14:59:49&lt;/last_state_changed_on&gt;
+        &lt;line_number/&gt;
+        &lt;location/&gt;
+        &lt;login_required/&gt;
+        &lt;number&gt;AVIT0091529&lt;/number&gt;
+        &lt;opened_at&gt;2025-07-28 07:00:00&lt;/opened_at&gt;
+        &lt;opened_by display_value="VR System"&gt;c98e5bb253333200e8f9f745911c087a&lt;/opened_by&gt;
+        &lt;originating_scan_app_version/&gt;
+        &lt;originating_scan_lifecycle_stage/&gt;
+        &lt;package_id/&gt;
+        &lt;planned_version/&gt;
+        &lt;priority/&gt;
+        &lt;product_model/&gt;
+        &lt;project_branch/&gt;
+        &lt;project_name&gt;pramod-app&lt;/project_name&gt;
+        &lt;recommendation/&gt;
+        &lt;remediation_commitment_date/&gt;
+        &lt;remediation_plan/&gt;
+        &lt;reopened&gt;false&lt;/reopened&gt;
+        &lt;resolution_date/&gt;
+        &lt;resolution_reason/&gt;
+        &lt;resolved_by/&gt;
+        &lt;risk_rating&gt;6&lt;/risk_rating&gt;
+        &lt;risk_score&gt;0&lt;/risk_score&gt;
+        &lt;scan_type&gt;interactive&lt;/scan_type&gt;
+        &lt;security_team_contact/&gt;
+        &lt;short_description&gt;Forms Without Autocomplete Prevention detected&lt;/short_description&gt;
+        &lt;source&gt;Contrast Security&lt;/source&gt;
+        &lt;source_additional_info/&gt;
+        &lt;source_additional_info_string/&gt;
+        &lt;source_avit_id&gt;H21F-O0A4-CELG-FRK5&lt;/source_avit_id&gt;
+        &lt;source_exploit/&gt;
+        &lt;source_finding_status&gt;Reported&lt;/source_finding_status&gt;
+        &lt;source_link&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/0d1a7f6e-a669-486e-bd12-c12a5f7f545d/vulns/H21F-O0A4-CELG-FRK5&lt;/source_link&gt;
+        &lt;source_mitigation_status/&gt;
+        &lt;source_notes/&gt;
+        &lt;source_recommendation&gt;&lt;![CDATA[Disabling autocomplete on form values is easy. All you have to do is add an autocomplete attribute
+with a setting of off, as is shown in the password field of this example:
+&lt;form&gt;
+    &lt;input type="text" name="username" /&gt;
+    &lt;input type="password" name="userpass" /&gt;
+&lt;/form&gt;
+However, to prevent Contrast from flagging the form, you should disable autocomplete on the entire
+&amp;lt;form&amp;gt;, as shown here:
+&lt;form&gt;
+    &lt;input type="text" name="username" /&gt;
+    &lt;input type="password" name="userpass" /&gt;
+&lt;/form&gt;
+]]&gt;&lt;/source_recommendation&gt;
+        &lt;source_references/&gt;
+        &lt;source_remediation_status&gt;Reported&lt;/source_remediation_status&gt;
+        &lt;source_request/&gt;
+        &lt;source_resolved_date&gt;2025-07-28 14:59:49&lt;/source_resolved_date&gt;
+        &lt;source_response/&gt;
+        &lt;source_sdlc_status/&gt;
+        &lt;source_severity&gt;5&lt;/source_severity&gt;
+        &lt;source_target_fix_date/&gt;
+        &lt;source_vulnerability_explanation&gt;&lt;![CDATA[We observed 3 pages which contained form elements that did not have autocomplete set to off:]]&gt;&lt;/source_vulnerability_explanation&gt;
+        &lt;source_vulnerability_summary&gt;&lt;![CDATA[Any &amp;lt;form&amp;gt; tags without the autocomplete attribute set to off allow user
+agents to automatically save user credentials. Even if individual fields have autocomplete
+disabled, it is a safer practice to cover the entire &amp;lt;form&amp;gt;.
+]]&gt;&lt;/source_vulnerability_summary&gt;
+        &lt;state&gt;1&lt;/state&gt;
+        &lt;state_inheritance_count&gt;0&lt;/state_inheritance_count&gt;
+        &lt;steps_to_reproduce/&gt;
+        &lt;substate/&gt;
+        &lt;sys_class_name&gt;sn_vul_app_vulnerable_item&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;VR.System&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-07-28 14:59:49&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_id&gt;121be609970f2a506b73be6de053af3c&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;VR.System&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-07-28 16:46:54&lt;/sys_updated_on&gt;
+        &lt;technical_details/&gt;
+        &lt;ttr_applied_rule/&gt;
+        &lt;ttr_calculated&gt;false&lt;/ttr_calculated&gt;
+        &lt;ttr_status&gt;no_target&lt;/ttr_status&gt;
+        &lt;ttr_target_date/&gt;
+        &lt;use_ttr&gt;true&lt;/use_ttr&gt;
+        &lt;vulnerability display_value="Contrast Security CWE - 525"&gt;53a9166f97381e106b73be6de053af80&lt;/vulnerability&gt;
+        &lt;vulnerable_links&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/0d1a7f6e-a669-486e-bd12-c12a5f7f545d/vulns/H21F-O0A4-CELG-FRK5&lt;/vulnerable_links&gt;
+        &lt;vulnerable_method_info/&gt;
+        &lt;work_notes/&gt;
+    &lt;/sn_vul_app_vulnerable_item&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-08-06 05:55:02</sys_created_on>
+        <sys_id>0ab40bf7974f6a106b73be6de053af2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AVIT0091529</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_metadata_link_0ab40bf7974f6a106b73be6de053af2e</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-08-06 05:55:02</sys_updated_on>
+        <tablename>sn_vul_app_vulnerable_item</tablename>
+    </sys_metadata_link>
+</record_update>

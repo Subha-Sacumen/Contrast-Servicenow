@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload.demo</directory>
+        <documentkey>221be609970f2a506b73be6de053af8a</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_vul_app_vulnerable_item"&gt;
+    &lt;sn_vul_app_vulnerable_item action="INSERT_OR_UPDATE"&gt;
+        &lt;access_to_internal_data/&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;affected_functionality/&gt;
+        &lt;affected_parameter/&gt;
+        &lt;affected_url/&gt;
+        &lt;age_closed&gt;0&lt;/age_closed&gt;
+        &lt;age_duration&gt;1970-01-10 05:55:00&lt;/age_duration&gt;
+        &lt;app_vul_scan_summary display_value=""&gt;6e1be609970f2a506b73be6de053af89&lt;/app_vul_scan_summary&gt;
+        &lt;application_module/&gt;
+        &lt;application_release display_value="AppParentTest"&gt;aa1be609970f2a506b73be6de053af89&lt;/application_release&gt;
+        &lt;assessment_request/&gt;
+        &lt;assigned_to/&gt;
+        &lt;assignment_group/&gt;
+        &lt;assignment_rule/&gt;
+        &lt;assignment_type&gt;1&lt;/assignment_type&gt;
+        &lt;backup_state&gt;0&lt;/backup_state&gt;
+        &lt;backup_substate/&gt;
+        &lt;business_application/&gt;
+        &lt;business_criticality&gt;3&lt;/business_criticality&gt;
+        &lt;category_name&gt;hql-injection&lt;/category_name&gt;
+        &lt;change_approval/&gt;
+        &lt;close_notes/&gt;
+        &lt;closed_at/&gt;
+        &lt;closed_by/&gt;
+        &lt;cmdb_ci display_value="AppParentTest"&gt;f988a245970f2a506b73be6de053afcc&lt;/cmdb_ci&gt;
+        &lt;compliance_program_impacted/&gt;
+        &lt;complies_with_policy&gt;not_applicable&lt;/complies_with_policy&gt;
+        &lt;defer_count&gt;0&lt;/defer_count&gt;
+        &lt;defer_extend_count&gt;0&lt;/defer_extend_count&gt;
+        &lt;dependency_type/&gt;
+        &lt;description&gt;Hibernate Injection from "query" Parameter on "/grizzly/create-query" page&lt;/description&gt;
+        &lt;effort/&gt;
+        &lt;evidence/&gt;
+        &lt;first_found/&gt;
+        &lt;has_vulnerable_methods&gt;false&lt;/has_vulnerable_methods&gt;
+        &lt;ignore_date/&gt;
+        &lt;ignore_expiration/&gt;
+        &lt;ignore_reason/&gt;
+        &lt;ignored_by/&gt;
+        &lt;impact/&gt;
+        &lt;impacts_compliance_program&gt;2&lt;/impacts_compliance_program&gt;
+        &lt;in_effort&gt;no&lt;/in_effort&gt;
+        &lt;integration display_value=""&gt;Contrast IAST List Integration&lt;/integration&gt;
+        &lt;integration_instance display_value="Contrast Application Vulnerability"&gt;bacbac81330c12506f51b1945d5c7bf7&lt;/integration_instance&gt;
+        &lt;integration_run display_value="VINTRUN0001602"&gt;b8b4a20dc3cb6290fc40382a0501313c&lt;/integration_run&gt;
+        &lt;is_in_group&gt;false&lt;/is_in_group&gt;
+        &lt;last_found/&gt;
+        &lt;last_found_dt_tm&gt;2025-07-28 14:59:50&lt;/last_found_dt_tm&gt;
+        &lt;last_opened&gt;2025-07-28&lt;/last_opened&gt;
+        &lt;last_seen_scan_app_version/&gt;
+        &lt;last_seen_scan_lifecycle_stage/&gt;
+        &lt;last_state_changed_on&gt;2025-07-28 14:59:50&lt;/last_state_changed_on&gt;
+        &lt;line_number/&gt;
+        &lt;location/&gt;
+        &lt;login_required/&gt;
+        &lt;number&gt;AVIT0091552&lt;/number&gt;
+        &lt;opened_at&gt;2025-07-28 07:00:00&lt;/opened_at&gt;
+        &lt;opened_by display_value="VR System"&gt;c98e5bb253333200e8f9f745911c087a&lt;/opened_by&gt;
+        &lt;originating_scan_app_version/&gt;
+        &lt;originating_scan_lifecycle_stage/&gt;
+        &lt;package_id/&gt;
+        &lt;planned_version/&gt;
+        &lt;priority/&gt;
+        &lt;product_model/&gt;
+        &lt;project_branch/&gt;
+        &lt;project_name&gt;AppParentTest&lt;/project_name&gt;
+        &lt;recommendation/&gt;
+        &lt;remediation_commitment_date/&gt;
+        &lt;remediation_plan/&gt;
+        &lt;reopened&gt;false&lt;/reopened&gt;
+        &lt;resolution_date/&gt;
+        &lt;resolution_reason/&gt;
+        &lt;resolved_by/&gt;
+        &lt;risk_rating&gt;6&lt;/risk_rating&gt;
+        &lt;risk_score&gt;0&lt;/risk_score&gt;
+        &lt;scan_type&gt;interactive&lt;/scan_type&gt;
+        &lt;security_team_contact/&gt;
+        &lt;short_description&gt;Hibernate Injection from "query" Parameter on "/grizzly/create-query" page&lt;/short_description&gt;
+        &lt;source&gt;Contrast Security&lt;/source&gt;
+        &lt;source_additional_info/&gt;
+        &lt;source_additional_info_string/&gt;
+        &lt;source_avit_id&gt;U2H8-PLR9-D80W-RQW6&lt;/source_avit_id&gt;
+        &lt;source_exploit/&gt;
+        &lt;source_finding_status&gt;Reported&lt;/source_finding_status&gt;
+        &lt;source_link&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/879b6596-bec3-475e-8326-58d933b08da7/vulns/U2H8-PLR9-D80W-RQW6&lt;/source_link&gt;
+        &lt;source_mitigation_status/&gt;
+        &lt;source_notes/&gt;
+        &lt;source_recommendation&gt;&lt;![CDATA[There are two primary techniques for making the use of Hibernate safe from Hibernate Injection: 1) avoid the construction of dynamic HQL, and 2) use bind variables to make it safe to use unsafe data within an HQL query. Approach 3) involves avoiding the use of old deprecated Hibernate methods that are subject to HQL injection. Hopefully you aren&amp;#39;t using those anymore.
+
+Approach #1: Avoid Dynamic HQL
+
+One of the beauties of Hibernate is that you usually don&amp;#39;t have to write custom SQL code. If you need to remediate a Hibernate injection flaw, we recommend that you examine the query first to see if you can rewrite the code to eliminate the custom query entirely. If you can instead simply access the Java objects mapped to the database with Hibernate, this will eliminate the custom Hibernate query entirely. Hibernate ensures that the queries it generates when mapped Java objects are accessed are safe from SQL injection through the use of Prepared Statements.
+
+Approach #2: Use Bind Variables
+
+If you can&amp;#39;t eliminate the custom HQL, then modifying the query to use bind variables in place of doing direct string concatenations of dangerous input will also fix the problem. Consider the example unsafe query:
+
+Query unsafeHQLQuery &amp;#61; session.createQuery(&amp;#34;from Inventory inv where inv.productID &amp;#61; &amp;#39;&amp;#34; &amp;#43; userSuppliedParameter &amp;#43; &amp;#34;&amp;#39;&amp;#34;);
+
+There are numerous ways to use bind variables in Hibernate queries. For full details on all these methods and alternate method signatures for many of the methods used in the examples that follow, see: http://docs.jboss.org/hibernate/orm/3.5/javadoc/org/hibernate/Session.html$$LINK_DELIM$$JavaDoc for Hibernate Session class
+
+Here are a number of different approaches for using bind variables with Hibernate queries:
+
+Binding Technique 1: Named Parameters
+
+Query safeHQLQuery &amp;#61; session.createQuery(&amp;#34;from Inventory inv where inv.productID &amp;#61; :productid&amp;#34;);
+safeHQLQuery.setParameter(&amp;#34;productid&amp;#34;, userSuppliedParameter); // for named parameters, setParameter can be used regardless of the data type being set
+Note: There are 4 different method signatures for setParameter() and there is also setParameters(Object[] values, Type[] types).
+Binding Technique 2: Bind Variables
+
+Query safeHQLQuery2 &amp;#61; session.createSQLQuery(&amp;#34;from Inventory where productID &amp;#61; ?&amp;#34;);
+safeHQLQuery2.setString(0, userSuppliedParameter);  // 0 is the position parameter, where the count starts with 0, then 1, etc.
+With unnamed parameters, the proper set method has to be used based on the data type being set. Hibernate supports a rich set of data type specific methods for setting the values of bind variables. Some examples are:
+
+setString( position, value);
+setInt( position, value);
+setLong( position, value);
+Binding Technique #3: Named Parameters using setProperties
+You can pass an object into the parameter binding. Hibernate will automatically check the object&amp;#39;s properties and match a property with the same name as the named parameter.
+
+Stock stock &amp;#61; new Stock();
+stock.setStockCode(&amp;#34;1234&amp;#34;);
+Query query &amp;#61; session.createQuery(&amp;#34;from Stock s where s.stockCode &amp;#61; :stockCode&amp;#34;);
+query.setProperties(stock);
+Note: setProperties() can set multiple named parameters in a single call. It will set every named parameter in the query that has a matching property value in the object passed in.
+Binding Technique #4: Named Parameter List
+
+Query query &amp;#61; session.createQuery(&amp;#34;from TABLENAME t where t.name in (:listOfNames)&amp;#34;);
+query.setParameterList(&amp;#34;listOfNames&amp;#34;, namesFromUser);
+Note: There are 4 different method signatures for setParameterList().
+Binding Technique #5: Use Named Queries
+You can generate the equivalent of a Hibernate Stored Procedure by creating a named query. Such named queries are stored in Hibernate mapping files rather than in the database itself since they are not dependent on any particular database type. Here&amp;#39;s an example:
+
+ ?
+     ] ]&amp;gt;
+Parameter binding and executing is done programmatically:
+
+Query query &amp;#61; session.getNamedQuery(&amp;#34;ByNameAndMaximumWeight&amp;#34;);
+     query.setString(0, name);
+     query.setInt(1, minWeight);
+     List animals &amp;#61; query.list();
+Approach #3: Avoid Use of Old Deprecated Dangerous HIbernate Methods
+
+The Hibernate Session class originally implemented 5 different methods with various signatures for each (total of 14 method signatures) that were all subject to HQL injection. These methods are now deprecated but still available in the Session class through an alternate version of the http://docs.jboss.org/hibernate/orm/3.5/javadoc/org/hibernate/Session.html$$LINK_DELIM$$org.hibernate.Session interface called http://docs.jboss.org/hibernate/orm/3.5/javadoc/org/hibernate/classic/Session.html$$LINK_DELIM$$org.hibernate.classic.Session, which extends the Session interface.
+If you are still using any code that calls the following methods in this interface:
+createSQLQuery(String sql, String[] returnAliases, Class[] returnClasses)
+createSQLQuery(String sql, String returnAlias, Class returnClass)
+delete(String query)
+delete(String query, Object[] values, Type[] types)
+delete(String query, Object value, Type type)
+filter (3 versions)
+find (3 versions)
+iterate (3 versions)
+
+You should replace their use with the replacement method recommended in the http://docs.jboss.org/hibernate/orm/3.5/javadoc/org/hibernate/classic/Session.html$$LINK_DELIM$$Hibernate documentation for this deprecated interface, and then make sure your use of the replacement method is safe from Hibernate injection.]]&gt;&lt;/source_recommendation&gt;
+        &lt;source_references/&gt;
+        &lt;source_remediation_status&gt;Reported&lt;/source_remediation_status&gt;
+        &lt;source_request/&gt;
+        &lt;source_resolved_date&gt;2025-07-28 14:59:50&lt;/source_resolved_date&gt;
+        &lt;source_response/&gt;
+        &lt;source_sdlc_status/&gt;
+        &lt;source_severity&gt;5&lt;/source_severity&gt;
+        &lt;source_target_fix_date/&gt;
+        &lt;source_vulnerability_explanation&gt;&lt;![CDATA[We tracked the following data from &amp;#34;query&amp;#34; Parameter:&lt;br /&gt;GET /grizzly/create-query?query&amp;#61;param&lt;br /&gt;...which was accessed within the following code:&lt;br /&gt;com.contrastsecurity.grizzly.hibernate.query.CreateQueryHandler#service(), line 27&lt;br /&gt;...and ended up in this database query:&lt;br /&gt;select dto.id from com.contrastsecurity.grizzly.hibernate.dto.HibernateDTO as dto where dto.param &amp;#61; &amp;#39;param&amp;#39;]]&gt;&lt;/source_vulnerability_explanation&gt;
+        &lt;source_vulnerability_summary&gt;&lt;![CDATA[Because the data is not validated or encoded, it&amp;#39;s possible that an attacker can craft a malicious piece of input that can allow Hibernate Query Language injection. Hibernate is an object-relational mapping (ORM) library for Java, providing a framework for mapping an object-oriented domain model to a traditional relational database. It provides an abstraction layer between application code and the underlying database. In the normal use of Hibernate, Java objects are mapped to the underlying database in such a manner that allows the developer to interact with just the Java object without the need to develop any custom SQL code to access the database table the object is mapped to. However, in certain circumstances, the developer may want to write their own custom SQL code to access the underlying database. Hibernate supports this use case by providing its own Hibernate Query Language (HQL), which is very similar to SQL, but abstracts away the type of underlying database that Hibernate is accessing.
+
+When developing HQL queries, developers can introduce Hibernate Injection flaws, just like they can introduce SQL injection flaws, by appending user supplied data to an HQL query they are constructing. HQL queries are created using Hibernate&amp;#39;s createQuery() method. You can also create native SQL queries in Hibernate using Hibernate&amp;#39;s createSQLQuery() method.
+
+Here is an example of an unsafe HQL Statement:
+ 
+Query unsafeHQLQuery &amp;#61; session.createQuery(&amp;#34;from Inventory inv where inv.productID &amp;#61; &amp;#39;&amp;#34; &amp;#43; userSuppliedParameter &amp;#43; &amp;#34;&amp;#39;&amp;#34;);]]&gt;&lt;/source_vulnerability_summary&gt;
+        &lt;state&gt;1&lt;/state&gt;
+        &lt;state_inheritance_count&gt;0&lt;/state_inheritance_count&gt;
+        &lt;steps_to_reproduce/&gt;
+        &lt;substate/&gt;
+        &lt;sys_class_name&gt;sn_vul_app_vulnerable_item&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;VR.System&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-07-28 14:59:50&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_id&gt;221be609970f2a506b73be6de053af8a&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;VR.System&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-07-28 16:46:55&lt;/sys_updated_on&gt;
+        &lt;technical_details/&gt;
+        &lt;ttr_applied_rule/&gt;
+        &lt;ttr_calculated&gt;false&lt;/ttr_calculated&gt;
+        &lt;ttr_status&gt;no_target&lt;/ttr_status&gt;
+        &lt;ttr_target_date/&gt;
+        &lt;use_ttr&gt;true&lt;/use_ttr&gt;
+        &lt;vulnerability display_value="Contrast Security CWE - 564"&gt;524d9cd49769e2106b73be6de053af02&lt;/vulnerability&gt;
+        &lt;vulnerable_links&gt;https://teamserver-staging.contsec.com/Contrast/static/ng/index.html#/119844af-42ff-4293-b06b-81d426e9a4a9/applications/879b6596-bec3-475e-8326-58d933b08da7/vulns/U2H8-PLR9-D80W-RQW6&lt;/vulnerable_links&gt;
+        &lt;vulnerable_method_info/&gt;
+        &lt;work_notes/&gt;
+    &lt;/sn_vul_app_vulnerable_item&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-08-06 05:55:04</sys_created_on>
+        <sys_id>9ab40bf7974f6a106b73be6de053afe1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AVIT0091552</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_metadata_link_9ab40bf7974f6a106b73be6de053afe1</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-08-06 05:55:04</sys_updated_on>
+        <tablename>sn_vul_app_vulnerable_item</tablename>
+    </sys_metadata_link>
+</record_update>

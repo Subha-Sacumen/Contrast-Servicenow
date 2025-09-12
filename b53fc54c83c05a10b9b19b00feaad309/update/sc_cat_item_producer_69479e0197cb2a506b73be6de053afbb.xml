@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
+    <sc_cat_item_producer action="INSERT_OR_UPDATE">
+        <access_type>restricted</access_type>
+        <active>true</active>
+        <allow_edit>false</allow_edit>
+        <availability>on_desktop</availability>
+        <billable>false</billable>
+        <can_cancel>false</can_cancel>
+        <category/>
+        <checked_out/>
+        <cost>0</cost>
+        <custom_cart/>
+        <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
+        <delivery_plan_script/>
+        <delivery_time>1970-01-03 00:00:00</delivery_time>
+        <description><![CDATA[<table style="width: 1126.65px; height: 30.7955px;"><tbody><tr style="height: 30.7955px;"><td style="height: 30.7955px;" colspan="99">
+<div><span style="background-color: #c2e0f4;">Contrast-Servicenow Vulnerability Integration: Implement Vulnerability Response application within ServiceNow to assist Vulnerability Management teams in focusing on the most critical risks, respond faster and more efficiently across security and IT teams, and provide real-time visibility.</span></div>
+</td></tr></tbody></table>]]></description>
+        <display_price_property>non_zero</display_price_property>
+        <entitlement_script/>
+        <flow_designer_flow/>
+        <fulfillment_automation_level>unspecified</fulfillment_automation_level>
+        <group/>
+        <hide_sp>false</hide_sp>
+        <icon/>
+        <ignore_price>true</ignore_price>
+        <image/>
+        <location/>
+        <make_item_non_conversational>false</make_item_non_conversational>
+        <mandatory_attachment>false</mandatory_attachment>
+        <meta/>
+        <mobile_hide_price>false</mobile_hide_price>
+        <mobile_picture/>
+        <mobile_picture_type>use_desktop_picture</mobile_picture_type>
+        <model/>
+        <name>Contrast Application Vulnerability Configuration</name>
+        <no_attachment_v2>false</no_attachment_v2>
+        <no_cart>false</no_cart>
+        <no_cart_v2>false</no_cart_v2>
+        <no_delivery_time_v2>false</no_delivery_time_v2>
+        <no_order>false</no_order>
+        <no_order_now>false</no_order_now>
+        <no_proceed_checkout>false</no_proceed_checkout>
+        <no_quantity>false</no_quantity>
+        <no_quantity_v2>false</no_quantity_v2>
+        <no_save_as_draft>false</no_save_as_draft>
+        <no_search>false</no_search>
+        <no_wishlist_v2>false</no_wishlist_v2>
+        <omit_price>false</omit_price>
+        <order>0</order>
+        <ordered_item_link/>
+        <owner display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</owner>
+        <picture/>
+        <post_insert_script><![CDATA[/**
+* This script is executed after the record is generated. 
+* `current` Is the GlideRecord produced by Record Producer. Use `current.update()` to update the record
+* To access the variables, use `producer.var1` where var1 is the name of the variable
+* To access the Record Producer use `cat_item`
+*/]]></post_insert_script>
+        <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=69479e0197cb2a506b73be6de053afbb&amp;sysparm_preview=true", "summary");</preview>
+        <price>0</price>
+        <published_ref/>
+        <recurring_frequency/>
+        <redirect_url>generated_record</redirect_url>
+        <request_method/>
+        <roles/>
+        <save_options/>
+        <save_script><![CDATA[/**
+* This script is executed at every step save in Catalog Builder. 
+* This script is executed before `Script` is executed.
+* `current` Is the GlideRecord produced by Record Producer. 
+* To access the variables, use `producer.var1` where var1 is the name of the variable
+* To access the Record Producer use `cat_item`
+*/]]></save_script>
+        <sc_catalogs/>
+        <sc_ic_item_staging/>
+        <sc_ic_version/>
+        <sc_template/>
+        <script><![CDATA[var endPoint = "https://" + producer.contrast_url + "/Contrast/api/sast/organizations/" + producer.organization_id + "/projects";
+var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
+r.setEndpoint(endPoint);
+r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+r.setRequestHeader('API-Key', producer.api.getDecryptedValue()); //Load API-Key
+r.setRequestHeader('Authorization', producer.authorization); //Load Authorization
+r.setHttpTimeout(30000);
+
+var rtn = r.execute(); // Execute API
+
+if (rtn.getStatusCode() == 200) {
+
+    updateAPI();
+} else {
+    var r1 = new sn_ws.RESTMessageV2();
+    r1.setEndpoint("https://" + producer.contrast_url + "/Contrast/api/ng/" + producer.organization_id + "/applications/");
+    r1.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
+    r1.setRequestHeader('API-Key', producer.api.getDecryptedValue()); //Load API-Key
+    r1.setRequestHeader('Authorization', producer.authorization); //Load Authorization
+    r1.setRequestHeader('Accept', "application/json");
+    r1.setHttpMethod('GET');
+    r1.setHttpTimeout(30000);
+
+    var rtn1 = r1.execute(); // Execute API
+    if (rtn1.getStatusCode() == 200) {
+        updateAPI();
+    } else {
+        gs.addErrorMessage("Authentication Failed");
+        producer.redirect = "com.glideapp.servicecatalog_cat_item_view.do?v=1&sysparm_id=69479e0197cb2a506b73be6de053afbb";
+    }
+
+}
+
+
+function updateAPI() {
+    var configGR = new GlideRecord("sn_sec_int_impl_config");
+    configGR.addEncodedQuery("sys_scope.name=Contrast Security Application Vulnerability Integration");
+
+    configGR.query();
+    while (configGR.next()) {
+        switch (configGR.configuration.getDisplayValue()) {
+            case "api_key":
+                configGR.value = producer.api.getDecryptedValue();
+                //configGR.password_value=producer.api;
+                break;
+            case "org_id":
+                configGR.value = producer.organization_id;
+                break;
+            case "authorization":
+                configGR.value = producer.authorization;
+                break;
+            case "contrast_url":
+                configGR.value = producer.contrast_url;
+                break;
+            case "manage_false_positives_in_snow":
+                if (producer.manage_false_positives_in_servicenow == 'true') {
+                    configGR.value = true;
+                } else {
+                    configGR.value = false;
+                }
+                break;
+            case "manage_exceptions_in_snow":
+                if (producer.manage_exceptions_in_servicenow == 'true') {
+                    configGR.value = true;
+                } else {
+                    configGR.value = false;
+                }
+                break;
+        }
+		configGR.setWorkflow(false);
+        configGR.update();
+        producer.redirect = "com.glideapp.servicecatalog_cat_item_view.do?v=1&sysparm_id=69479e0197cb2a506b73be6de053afbb";
+    }
+}]]></script>
+        <short_description>Contrast Application Vulnerability Configuration</short_description>
+        <show_variable_help_on_load>false</show_variable_help_on_load>
+        <start_closed>false</start_closed>
+        <state/>
+        <sys_class_name>sc_cat_item_producer</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-07-28 13:34:18</sys_created_on>
+        <sys_id>69479e0197cb2a506b73be6de053afbb</sys_id>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>Contrast Application Vulnerability Configuration</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sc_cat_item_producer_69479e0197cb2a506b73be6de053afbb</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-10 06:11:20</sys_updated_on>
+        <table_name>sn_sec_int_impl_config</table_name>
+        <taxonomy_topic/>
+        <template/>
+        <template_manager_roles/>
+        <type>item</type>
+        <use_sc_layout>true</use_sc_layout>
+        <vendor/>
+        <version>52</version>
+        <view/>
+        <visible_bundle>true</visible_bundle>
+        <visible_guide>true</visible_guide>
+        <visible_standalone>true</visible_standalone>
+        <workflow/>
+    </sc_cat_item_producer>
+    <sys_translated_text action="delete_multiple" query="documentkey=69479e0197cb2a506b73be6de053afbb"/>
+    <fx_price action="delete_multiple" query="id=69479e0197cb2a506b73be6de053afbb"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="GBP">GBP</currency>
+        <field>price</field>
+        <id>69479e0197cb2a506b73be6de053afbb</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-07-28 13:34:18</sys_created_on>
+        <sys_id>f187d24197cb2a506b73be6de053af47</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-07-28 13:34:18</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
+</record_update>

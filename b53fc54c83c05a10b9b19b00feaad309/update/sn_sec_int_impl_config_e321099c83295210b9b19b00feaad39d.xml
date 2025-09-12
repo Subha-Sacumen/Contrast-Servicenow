@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_sec_int_impl_config">
+    <sn_sec_int_impl_config action="INSERT_OR_UPDATE">
+        <configuration display_value="api_key">3a1f705c83295210b9b19b00feaad360</configuration>
+        <implementation display_value="Contrast Application Vulnerability">bacbac81330c12506f51b1945d5c7bf7</implementation>
+        <password_value>﷞﷟﷒da0b5ae1971552506b73be6de053af83﷬﷔1﷬﷭61ZEPBRWaohiCxr82Acuxw==dmu9FaxTK9fMPsf5LEMhxktA0dH0JFkja5--14e8canEXWHeZFJfe7YZnybkOReL﷮﷯</password_value>
+        <sys_class_name>sn_sec_int_impl_config</sys_class_name>
+        <sys_created_by>muhammad.askar@sacumen.com</sys_created_by>
+        <sys_created_on>2024-10-25 13:36:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>e321099c83295210b9b19b00feaad39d</sys_id>
+        <sys_mod_count>66</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sn_sec_int_impl_config_e321099c83295210b9b19b00feaad39d</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-10 06:18:55</sys_updated_on>
+        <value/>
+    </sn_sec_int_impl_config>
+</record_update>

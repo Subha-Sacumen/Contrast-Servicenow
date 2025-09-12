@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_vul_app_integration">
+    <sn_vul_app_integration action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <delay>0</delay>
+        <delta_start_time/>
+        <entered_time/>
+        <instance display_value="Contrast Application Vulnerability">bacbac81330c12506f51b1945d5c7bf7</instance>
+        <integration display_value="Contrast Vulnerability Sync">86e5a0c933c812506f51b1945d5c7bdf</integration>
+        <integration_factory_script><![CDATA[(function(integrationProcessGr){     
+    return new x_ntsi_contrast_ap.ContrastAppListIntegrationJsonSAST(integrationProcessGr);
+})(integrationProcessGr);]]></integration_factory_script>
+        <integration_script display_value="ContrastAppListIntegrationJsonSAST">2b253b6d83405610b9b19b00feaad32e</integration_script>
+        <is_template>true</is_template>
+        <max_drift/>
+        <name>Contrast SAST List Integration</name>
+        <next_integration/>
+        <offset/>
+        <offset_type>0</offset_type>
+        <processor_factory_script><![CDATA[(function(integrationProcessGr){     
+    return new x_ntsi_contrast_ap.ContrastVulnerabilitiesProcessor(integrationProcessGr);
+})(integrationProcessGr);]]></processor_factory_script>
+        <report_processor_script/>
+        <report_processor_strategy>DATA_SOURCE</report_processor_strategy>
+        <run_as display_value="VR System">c98e5bb253333200e8f9f745911c087a</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_separately>false</run_separately>
+        <run_start>2025-02-12 06:25:00</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[new sn_vul.VulnerabilityIntegrationUtils().addIntegrationRun(current);]]></script>
+        <sys_class_name>sn_vul_app_integration</sys_class_name>
+        <sys_created_by>subha.u@sacumen.com</sys_created_by>
+        <sys_created_on>2024-08-16 10:16:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>4d34ff2d83405610b9b19b00feaad39c</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Contrast SAST List Integration</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sn_vul_app_integration_4d34ff2d83405610b9b19b00feaad39c</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-10 06:20:01</sys_updated_on>
+        <time_zone/>
+        <type/>
+        <upgrade_safe>false</upgrade_safe>
+    </sn_vul_app_integration>
+</record_update>
