@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
+        <mobile_callable>false</mobile_callable>
         <name>ContrastUtilBase</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var ContrastUtilBase = Class.create();
 ContrastUtilBase.prototype = {
     initialize: function() {},
@@ -15,8 +17,22 @@ ContrastUtilBase.prototype = {
     },
     getAttachment: function(attachmentGr) {
         var attachment = new GlideSysAttachment();
-        var payload = attachment.getContent(attachmentGr);
+        var size = attachmentGr.getValue("size_bytes");
+        size = parseInt(size);
+        var payload = "";
+        if (size >= (5 * 1024 * 1024)) {
+            var attachmentSysID = attachmentGr.sys_id + "";
+            var stream = attachment.getContentStream(attachmentSysID);
+            var reader = new GlideTextReader(stream);
+            var ln = ' ';
+            while ((ln = reader.readLine()) != null) {
+                payload += ln;
+            }
+        } else {
+            payload = attachment.getContent(attachmentGr);
+        }
         return JSON.parse(payload);
+
     },
 
     getDetailReport: function(configId, buildId) {
@@ -46,7 +62,7 @@ ContrastUtilBase.prototype = {
         gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration.name=authorization');
         gri.query();
         if (gri.next()) {
-            return gri.value; 
+            return gri.value;
         } else {
             return '';
         }
@@ -57,7 +73,7 @@ ContrastUtilBase.prototype = {
         gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration.name=api_key');
         gri.query();
         if (gri.next()) {
-            return gri.value; 
+            return gri.value;
         } else {
             return '';
         }
@@ -77,7 +93,7 @@ ContrastUtilBase.prototype = {
         gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration.name=org_id');
         gri.query();
         if (gri.next()) {
-            return gri.value; 
+            return gri.value;
         } else {
             return '';
         }
@@ -116,13 +132,11 @@ ContrastUtilBase.prototype = {
         r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
         r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
         r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
-        //r.setHttpTimeout(30000);
-
         return r.execute(); // Execute API
     },
 
     //RUN API
-    triggerAPI: function(implementationId) {
+    triggerAPI: function(implementationId, offset, limit) {
         var endPoint;
         //Get API EndPoint val
         endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/ng/" + this.getApiORGDetails() + "/applications";
@@ -130,24 +144,30 @@ ContrastUtilBase.prototype = {
         //Load REST API
         var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
         r.setEndpoint(endPoint);
+        r.setQueryParameter('offset', offset);
+        r.setQueryParameter('limit', limit);
         r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
         r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
         r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
-        r.setHttpTimeout(30000);
-        return r.execute(); // Execute API, validation is there in retrieveData function
+        return r.execute(); 	// Execute API, validation is there in retrieveData function
     },
-    getIASTVulnerabilities: function(implementationId, appId) {
+    getIASTVulnerabilities: function(implementationId, appId, offset_v, limit_v) {
         var endPoint;
-        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/ng/" + this.getApiORGDetails() + "/traces/" + appId + "//filter";
+		endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/ng/" + this.getApiORGDetails() + "/traces/" + appId + "//filter";
+		
         //Load REST API
         var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG-POST');
         r.setEndpoint(endPoint);
-        //r.setRequestHeader('User-Agent',gs.getProperty('glide.buildtag.last'));
+        r.setQueryParameter('offset', offset_v);
+        r.setQueryParameter('limit', limit_v);
+		r.setQueryParameter('sort', "-lastTimeSeen");
         var req = new GlideDateTime();
         var req_yesDay = new GlideDateTime();
         req_yesDay.addDaysUTC(-7);
+        var dtval = new GlideDateTime(req_yesDay.getDate() + " 00:00:00");
+
         var objBody = {
-            "startDate": req_yesDay.getNumericValue(),
+            "startDate": dtval.getNumericValue(),
             "endDate": req.getNumericValue()
         };
 
@@ -156,27 +176,24 @@ ContrastUtilBase.prototype = {
         r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
         r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
         r.setRequestHeader('Content-Type', "application/json");
-        r.setQueryParameter('limit', 100);
-       // r.setHttpTimeout(30000);
         return r.execute(); //validation is there in retrieveData function
-    },
+	},
+	
     //RUN API
-    triggerAPISAST: function(implementationId) {
+    triggerAPISAST: function(implementationId,pageNumber) {
         var endPoint;
         //Load ENDPOINT
         var ScanTimeAfter = new GlideDate();
-        ScanTimeAfter.addDaysUTC(-8);
+        ScanTimeAfter.addDaysUTC(-7);
         ScanTimeAfter = ScanTimeAfter + "T00:00:00Z";
         var ScanTimeBefore = new GlideDate() + "T00:00:00Z";
-        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/sast/organizations/" + this.getApiORGDetails() + "/projects?size=2000&lastScanTimeAfter=" + ScanTimeAfter + "&lastScanTimeBefore" + ScanTimeBefore;
+        endPoint = "https://" + this.getApiURLDetails() + "/Contrast/api/sast/organizations/" + this.getApiORGDetails() + "/projects?page="+pageNumber+"&lastScanTimeAfter=" + ScanTimeAfter + "&lastScanTimeBefore" + ScanTimeBefore;
         var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'IAST ORG');
         r.setEndpoint(endPoint);
         r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
         r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
         r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
-
-       // r.setHttpTimeout(30000);
-        return r.execute(); ////validation is there in retrieveData function
+        return r.execute(); 	//validation is there in retrieveData function
     },
     getSASTVulnerabilities: function(implementationId, appId, pageNumber) {
         var endPoint;
@@ -186,8 +203,7 @@ ContrastUtilBase.prototype = {
         r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
         r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
         r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
-        //r.setHttpTimeout(30000);
-        return r.execute();//validation is there in retrieveData function
+        return r.execute();  	//validation is there in retrieveData function
     },
     getSASTCWEID: function(implementationId, appId) {
         var endPoint;
@@ -197,7 +213,6 @@ ContrastUtilBase.prototype = {
         r.setRequestHeader('User-Agent', gs.getProperty('glide.buildtag.last'));
         r.setRequestHeader('API-Key', this.getApiKeyDetails()); //Load API-Key
         r.setRequestHeader('Authorization', this.getAuthorizationDetails()); //Load Authorization
-        //r.setHttpTimeout(30000);
         return r.execute();
     },
 
@@ -208,13 +223,13 @@ ContrastUtilBase.prototype = {
         <sys_created_by>subha.u@sacumen.com</sys_created_by>
         <sys_created_on>2024-08-14 06:05:40</sys_created_on>
         <sys_id>57172c0d33c812506f51b1945d5c7b59</sys_id>
-        <sys_mod_count>118</sys_mod_count>
+        <sys_mod_count>137</sys_mod_count>
         <sys_name>ContrastUtilBase</sys_name>
         <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
         <sys_policy/>
         <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
         <sys_update_name>sys_script_include_57172c0d33c812506f51b1945d5c7b59</sys_update_name>
-        <sys_updated_by>subha.udhayakumar</sys_updated_by>
-        <sys_updated_on>2025-09-01 05:04:02</sys_updated_on>
+        <sys_updated_by>pavan.kuma@contrastsecurity.com</sys_updated_by>
+        <sys_updated_on>2025-10-24 03:49:04</sys_updated_on>
     </sys_script_include>
 </record_update>

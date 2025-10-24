@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-10-13 04:24:04</sys_created_on>
+        <sys_id>9c0c7071c32cfe10fc40382a0501319f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ntsi_contrast_ap_contrast_vulnerability_status_sync.x_ntsi_contrast_ap.contrast_vulnerability_status_sync_user</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_security_acl display_value="x_ntsi_contrast_ap_contrast_vulnerability_status_sync">980c7071c32cfe10fc40382a0501319a</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_9c0c7071c32cfe10fc40382a0501319f</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-10-13 04:24:04</sys_updated_on>
+        <sys_user_role display_value="x_ntsi_contrast_ap.contrast_vulnerability_status_sync_user" name="x_ntsi_contrast_ap.contrast_vulnerability_status_sync_user">080c3071c32cfe10fc40382a05013127</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

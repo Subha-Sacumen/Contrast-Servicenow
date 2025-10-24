@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="132905cf33489a506f51b1945d5c7b4b" label="Rule CWE Mappings" max_length="40" name="x_ntsi_contrast_ap_rule_cwe_mappings" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element attributes="edge_encryption_enabled=true" label="Rule Display Name" max_length="200" name="rule_display_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="CWE ID" max_length="20" name="cwe_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Rule ID" max_length="40" name="rule_id" type="string"/>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

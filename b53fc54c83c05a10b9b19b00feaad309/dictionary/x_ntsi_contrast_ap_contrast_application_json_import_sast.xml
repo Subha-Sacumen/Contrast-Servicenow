@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="470673ed83405610b9b19b00feaad3f7" extends="sys_import_set_row" label="Contrast Application List Json Sast" max_length="40" name="x_ntsi_contrast_ap_contrast_application_json_import_sast" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/resultId" label="approvalWorkflow/resultId" max_length="40" name="u_approvalworkflow_resultid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=audit" label="audit" max_length="40" name="u_audit" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/dtLastUpdated" label="approvalWorkflow/dtLastUpdated" max_length="40" name="u_approvalwork__dtlastupdated" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/target" label="approvalWorkflow/target" max_length="40" name="u_approvalworkflow_target" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=message/text" label="message/text" max_length="40" name="u_message_text" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=fingerprint/preflight/v1" label="fingerprint/preflight/v1" max_length="40" name="u_fingerprint_preflight_v1" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow" label="approvalWorkflow" max_length="40" name="u_approvalworkflow" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/id" label="approvalWorkflow/id" max_length="40" name="u_approvalworkflow_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/userId" label="approvalWorkflow/userId" max_length="40" name="u_approvalworkflow_userid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=securityStandards/cweTop25" label="securityStandards/cweTop25" max_length="40" name="u_securitystandards_cwetop25" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/source" label="approvalWorkflow/source" max_length="40" name="u_approvalworkflow_source" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=critical" label="critical" max_length="40" name="u_critical" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=createdBy" label="createdBy" max_length="40" name="u_createdby" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=medium" label="medium" max_length="40" name="u_medium" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=branch" label="branch" max_length="40" name="u_branch" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=nativeId" label="nativeId" max_length="40" name="u_nativeid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=archived" label="archived" max_length="40" name="u_archived" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=high" label="high" max_length="40" name="u_high" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=lastScanTime" label="lastScanTime" max_length="40" name="u_lastscantime" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=low" label="low" max_length="40" name="u_low" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=lastScanId" label="lastScanId" max_length="40" name="u_lastscanid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=level" label="level" max_length="40" name="u_level" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=message" label="message" max_length="138" name="u_message" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=severity" label="severity" max_length="40" name="u_severity" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=organizationId" label="organizationId" max_length="40" name="u_organizationid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=lastSeenTime" label="lastSeenTime" max_length="40" name="u_lastseentime" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=securityStandards" label="securityStandards" max_length="40" name="u_securitystandards" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/newStatus" label="approvalWorkflow/newStatus" max_length="40" name="u_approvalworkflow_newstatus" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=securityStandards/owasp2021" label="securityStandards/owasp2021" max_length="40" name="u_securitystandards_owasp2021" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=approvalWorkflow/dtCreated" label="approvalWorkflow/dtCreated" max_length="40" name="u_approvalworkflow_dtcreated" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=securityStandards/cwe" label="securityStandards/cwe" max_length="40" name="u_securitystandards_cwe" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=firstCreatedTime" label="firstCreatedTime" max_length="40" name="u_firstcreatedtime" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=cwe_id" label="cwe_id" max_length="40" name="u_cwe_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=scanId" label="scanId" max_length="40" name="u_scanid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=note" label="note" max_length="40" name="u_note" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=ruleId" label="ruleId" max_length="46" name="u_ruleid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=status" label="status" max_length="40" name="u_status" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=source_link" label="source_link" max_length="400" name="u_source_link" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=completedScans" label="completedScans" max_length="40" name="u_completedscans" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=lastUpdatedTime" label="lastUpdatedTime" max_length="40" name="u_lastupdatedtime" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=fingerprint" label="fingerprint" max_length="40" name="u_fingerprint" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=id" label="id" max_length="40" name="u_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=language" label="language" max_length="40" name="u_language" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=isNew" label="isNew" max_length="40" name="u_isnew" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=name" label="name" max_length="40" name="u_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=parentId" label="parentId" max_length="40" name="u_parentid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=projectId" label="projectId" max_length="40" name="u_projectid" type="string"/>
+    </element>
+</database>

@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
+        <mobile_callable>false</mobile_callable>
         <name>ContrastVulnerabilitiesProcessor</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var ContrastVulnerabilitiesProcessor = Class.create();
 ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.ApplicationVulnerabilityImportProcessorBase, {
     // VulnerabilityReportProcessorBase
@@ -20,12 +22,14 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
      * @param {attachmentGr}  
      * @returns 
      */
+
     process: function(attachmentGr) {
         try {
             if (gs.nil(attachmentGr)) {
                 gs.warn(gs.getMessage('Processor Called with no attachment'));
                 return;
             }
+
             gs.debug("Invoking Process Script with attachment :{0}", [attachmentGr]);
 
             var appVulListObj = this.UTIL.getAttachment(attachmentGr);
@@ -33,12 +37,9 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
             for (var i = 0; i < vulnerabilities.length; i++) {
                 var scanId = vulnerabilities[i].scanId;
                 var vulDetails = vulnerabilities[i];
-
                 this._handleAVE(vulDetails);
+				this._applicationAVE(vulDetails);
                 var avitResult = this._handleAVIT(vulDetails, scanId);
-                // if (!gs.nil(avitResult) && !gs.nil(avitResult.avitId)) {
-                //     this._populateVulnerabilitiesInCustomTable(variances[0].module.id, "", avitResult.avitId);
-                // }
             }
             this.completeProcess();
         } catch (err) {
@@ -46,13 +47,25 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
         }
     },
 
+    _applicationAVE: function(vulDetails) {
+        //Generate object for Application 
+        var appObj = {
+            source_app_id: vulDetails.id + "",
+            app_name: vulDetails.name + "",
+            description: vulDetails.name + "",
+            source_app_guid: vulDetails.id + "",
+        };
+		
+        var result = this.AVR_API.createOrUpdateApp(appObj);
+    },
 
 
     _handleAVE: function(vulDetails) {
-        if (!gs.nil(vulDetails)) {
+        if (!gs.nil(vulDetails) && !gs.nil(vulDetails.id)) {
             var firstCreatedTimeV = new GlideDateTime(vulDetails.firstCreatedTime.split("T")[0]);
             var lastSeenTimeV = new GlideDateTime(vulDetails.lastSeenTime.split("T")[0]);
             var remediationData = ""; //
+
             var source_severity_obj = {
                 "CRITICAL": 1,
                 "HIGH": 2,
@@ -63,58 +76,32 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
             if (source_severity_obj[vulDetails.severity] != undefined) {
                 source_severity_val = source_severity_obj[vulDetails.severity];
             }
-            var gr1 = new GlideRecordSecure('sn_vul_app_scanned_application');
-            gr1.addEncodedQuery('name=' + vulDetails.name.toString());
-            gr1.query();
-            if (gr1.next()) {
-                cmdbV = gr1.sys_id;
-            } else {
-                gr1.initialize();
-                gr1.name = vulDetails.name.toString();
-                gr1.insert();
-                cmdbV = gr1.sys_id;
-            }
 
-            var cmdbV1 = "";
-            var gr2 = new GlideRecordSecure('sn_vul_app_release');
-            gr2.addEncodedQuery('app_name=' + vulDetails.name.toString());
-            gr2.query();
-            if (gr2.next()) {
-                cmdbV1 = gr2.sys_id;
-            } else {
-                gr2.initialize();
-                gr2.app_name = vulDetails.name.toString();
-                gr2.insert();
-                cmdbV1 = gr2.sys_id;
-            }
             var prepareAppVulEntry = {
                 cvss_base_score: vulDetails.severity + "",
                 cvss_vector: vulDetails.severity,
                 first_detection_date: firstCreatedTimeV.getDate(),
                 last_detection_date: lastSeenTimeV.getDate(),
-                last_found: lastSeenTimeV.getDate(),
-                first_found: firstCreatedTimeV.getDate(),
-                source_entry_id: " Contrast " + vulDetails.id,
+                last_found: lastSeenTimeV,
+                first_found: firstCreatedTimeV,
+                source_entry_id: " Contrast " + vulDetails.securityStandards.cwe,
                 source_severity: source_severity_val,
                 source: "Contrast Security",
-                app_name: vulDetails.name.toString(),
                 name: vulDetails.name.toString(),
-
-
                 short_description: vulDetails.message.text.toString(),
                 solution: remediationData
             };
-            //cmdb_ci: cmdbV,
-            //  source_severity: source_severity_val.toString(),
-            // application_release: vulDetails.name.toString(),
+            prepareAppVulEntry['cwe_list'] = [{
+                cwe_id: vulDetails.id.toString(),
+                name: vulDetails.name.toString()
+            }];
+
             return this.AVR_API.createOrUpdateAppVulEntry(prepareAppVulEntry);
-
-
-            /* var a = new sn_vul.AVRImportAPIBase().createOrUpdateAppVulEntry(prepareAppVulEntry);
-			return a;*/
 
         }
     },
+
+
 
     /**
      * This function insert or update of data in Application Vulnerable Item Table
@@ -123,8 +110,8 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
      * @returns {Object} avitResult
      */
     _handleAVIT: function(vulDetails, scanId) {
-        var firstCreatedTimeV = new GlideDateTime(vulDetails.firstCreatedTime.split("T")[0]).getDate();
-        var lastSeenTimeV = new GlideDateTime(vulDetails.lastSeenTime.split("T")[0]).getDate();
+        var firstCreatedTimeV = new GlideDateTime(vulDetails.firstCreatedTime.split("T")[0]);
+        var lastSeenTimeV = new GlideDateTime(vulDetails.lastSeenTime.split("T")[0]);
 
         var source_severity_obj = {
             "CRITICAL": 1,
@@ -132,34 +119,9 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
             "MEDIUM": 3,
             "LOW": 4
         };
-        var source_severity_val = 5;
-        if (source_severity_obj[vulDetails.severity] != undefined) {
-            source_severity_val = source_severity_obj[vulDetails.severity];
-        }
-        var cmdbV = "";
-        var gr1 = new GlideRecordSecure('sn_vul_app_scanned_application');
-        gr1.addEncodedQuery('name=' + vulDetails.name.toString());
-        gr1.query();
-        if (gr1.next()) {
-            cmdbV = gr1.sys_id;
-        } else {
-            gr1.initialize();
-            gr1.name = vulDetails.name.toString();
-            gr1.insert();
-            cmdbV = gr1.sys_id;
-        }
-
-        var cmdbV1 = "";
-        var gr2 = new GlideRecordSecure('sn_vul_app_release');
-        gr2.addEncodedQuery('app_name=' + vulDetails.name.toString());
-        gr2.query();
-        if (gr2.next()) {
-            cmdbV1 = gr2.sys_id;
-        } else {
-            gr2.initialize();
-            gr2.app_name = vulDetails.name.toString();
-            gr2.insert();
-            cmdbV1 = gr2.sys_id;
+        var source_severity_val = vulDetails.severity;
+        if (source_severity_val == 'NOTE' || source_severity_val == 'Note') {
+            source_severity_val = "LOW";
         }
         var a = vulDetails.status;
         var status_v = 1;
@@ -187,12 +149,12 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
         if (grURL.next()) {
             appURL = grURL.value; //Application value
         }
-        var sourceLink = "https://"+appURL+"/Contrast/static/ng/index.html#/" + vulDetails.organizationId + "/scans/" +
+        var sourceLink = "https://" + appURL + "/Contrast/static/ng/index.html#/" + vulDetails.organizationId + "/scans/" +
             vulDetails.projectId + "/vulnerabilities/" + vulDetails.id;
 
 
 
-//vulnerable_links: vulDetails.source_link,
+        //vulnerable_links: vulDetails.source_link,
         var vulObject = {
             source_avit_id: vulDetails.id,
             source_scan_id: scanId,
@@ -203,30 +165,18 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
             source_finding_status: vulDetails.status,
             source_link: sourceLink,
             app_name: vulDetails.name.toString(),
-            name: vulDetails.name.toString(),
-			vulnerable_links: vulDetails.source_link,
-
-            
+            vulnerable_links: vulDetails.source_link,
             scan_type: "static",
             short_description: vulDetails.message.text,
             description: vulDetails.message.text,
             source_severity: source_severity_val.toString(),
-
             state: status_v,
             project_name: vulDetails.name,
             category_name: vulDetails.ruleId.toString(),
-
-
-            vulnerability: "Contrast Security CWE - " + vulDetails.securityStandards.cwe,
+            last_found: lastSeenTimeV,
+            first_found: firstCreatedTimeV,
             source_notes: ""
         };
-        //cmdb_ci: cmdbV,
-        //application_release: cmdbV1,
-        //  category_name: vulDetails.ruleId.toString(),
-
-        //integration:"Contrast SAST List Integration",
-        // category_name: vulDetails.ruleid,
-        //source_severity: source_severity_val.toString(),
 
         var avitResult = this.AVR_API.createOrUpdateAVIT(vulObject);
 
@@ -238,9 +188,9 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
         else if (avitResult.inserted)
             this.import_counts.inserted++;
 
-        else if (avitResult.unchanged)
+        else if (avitResult.unchanged) {
             this.import_counts.unchanged++;
-
+        }
         if (avitResult.hasOwnProperty("avitId")) {
             return avitResult;
         }
@@ -253,9 +203,10 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
      */
 
     completeProcess: function() {
+
         gs.debug(" Invoking Complete Process");
 
-        var integrationProcess = new GlideRecordSecure('sn_vul_integration_process');
+        var integrationProcess = new GlideRecord('sn_vul_integration_process');
         if (this.PROCESS_GR != null && integrationProcess.get(this.PROCESS_ID)) {
             integrationProcess.setValue("vi_created", this.import_counts.inserted);
             integrationProcess.setValue("vi_updated", this.import_counts.updated);
@@ -267,19 +218,20 @@ ContrastVulnerabilitiesProcessor.prototype = Object.extendsObject(sn_vul.Applica
     },
 
 
+
     type: 'ContrastVulnerabilitiesProcessor'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>subha.udhayakumar</sys_created_by>
         <sys_created_on>2025-04-14 12:20:52</sys_created_on>
         <sys_id>3257955fc3f0ea10fc40382a05013103</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>144</sys_mod_count>
         <sys_name>ContrastVulnerabilitiesProcessor</sys_name>
         <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
         <sys_policy/>
         <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
         <sys_update_name>sys_script_include_3257955fc3f0ea10fc40382a05013103</sys_update_name>
         <sys_updated_by>subha.udhayakumar</sys_updated_by>
-        <sys_updated_on>2025-08-20 06:17:07</sys_updated_on>
+        <sys_updated_on>2025-10-17 05:02:20</sys_updated_on>
     </sys_script_include>
 </record_update>

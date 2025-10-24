@@ -47,7 +47,6 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>muhammad.askar@sacumen.com</sys_created_by>
         <sys_created_on>2024-10-21 09:53:46</sys_created_on>
-        <sys_id>1de7ab76979d92106b73be6de053afa3</sys_id>
         <sys_name>x_ntsi_contrast_ap_rule_cwe_mappings</sys_name>
         <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
         <sys_policy/>

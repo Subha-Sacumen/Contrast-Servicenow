@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_ntsi_contrast_ap.contrast_api" name="x_ntsi_contrast_ap.contrast_api">f54fd9ad336ede106f51b1945d5c7bf0</contains>
+        <role display_value="sn_vul.app_sec_manager" name="sn_vul.app_sec_manager">f9999d1dc4295110f877c366974d0ee6</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-09-22 07:15:09</sys_created_on>
+        <sys_id>75c91d0fc3847290fc40382a05013178</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ntsi_contrast_ap.contrast_api.sn_vul.app_sec_manager</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_user_role_contains_75c91d0fc3847290fc40382a05013178</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-09-22 07:15:09</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

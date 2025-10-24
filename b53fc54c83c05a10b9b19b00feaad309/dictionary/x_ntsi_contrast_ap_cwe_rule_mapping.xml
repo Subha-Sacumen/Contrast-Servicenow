@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="610ed3be83119650b9b19b00feaad3fb" extends="sys_import_set_row" label="CWE_RULE_MAPPING" max_length="40" name="x_ntsi_contrast_ap_cwe_rule_mapping" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Rule ID" label="Rule ID" max_length="40" name="u_rule_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Rule Display Name" label="Rule Display Name" max_length="68" name="u_rule_display_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CWE ID" label="CWE ID" max_length="40" name="u_cwe_id" type="integer"/>
+    </element>
+</database>

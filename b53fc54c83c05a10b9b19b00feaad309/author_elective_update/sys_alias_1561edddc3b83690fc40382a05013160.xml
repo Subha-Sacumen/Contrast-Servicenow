@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias">
+    <sys_alias action="DELETE">
+        <configuration_template/>
+        <connection_type>http_connection</connection_type>
+        <id>x_ntsi_contrast_ap.Sacumen_AVR</id>
+        <is_internal>false</is_internal>
+        <multiple_connections>false</multiple_connections>
+        <name>Sacumen_AVR</name>
+        <parent/>
+        <retry_policy display_value="Default HTTP Retry Policy">ef751ff07301330025d71afe2ff6a7f9</retry_policy>
+        <sys_class_name>sys_alias</sys_class_name>
+        <sys_created_by>pavan.kuma@contrastsecurity.com</sys_created_by>
+        <sys_created_on>2025-10-24 04:06:29</sys_created_on>
+        <sys_id>1561edddc3b83690fc40382a05013160</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ntsi_contrast_ap.Sacumen_AVR</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sys_alias_1561edddc3b83690fc40382a05013160</sys_update_name>
+        <sys_updated_by>pavan.kuma@contrastsecurity.com</sys_updated_by>
+        <sys_updated_on>2025-10-24 04:06:29</sys_updated_on>
+        <type>credential</type>
+    </sys_alias>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</application>
+        <file_path/>
+        <instance_id>13b2ec51dbd2e5d40b9d21c4059619d6</instance_id>
+        <instance_name>ven06078</instance_name>
+        <name>sys_alias_1561edddc3b83690fc40382a05013160</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias"><sys_alias action="INSERT_OR_UPDATE"><configuration_template/><connection_type>http_connection</connection_type><id>x_ntsi_contrast_ap.Sacumen_AVR</id><is_internal>false</is_internal><multiple_connections>false</multiple_connections><name>Sacumen_AVR</name><parent/><retry_policy display_value="Default HTTP Retry Policy">ef751ff07301330025d71afe2ff6a7f9</retry_policy><sys_class_name>sys_alias</sys_class_name><sys_created_by>pavan.kuma@contrastsecurity.com</sys_created_by><sys_created_on>2025-10-24 04:06:29</sys_created_on><sys_id>1561edddc3b83690fc40382a05013160</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_ntsi_contrast_ap.Sacumen_AVR</sys_name><sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package><sys_policy/><sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope><sys_update_name>sys_alias_1561edddc3b83690fc40382a05013160</sys_update_name><sys_updated_by>pavan.kuma@contrastsecurity.com</sys_updated_by><sys_updated_on>2025-10-24 04:06:29</sys_updated_on><type>credential</type></sys_alias></record_update>]]></payload>
+        <payload_hash>-1569228742</payload_hash>
+        <record_name>x_ntsi_contrast_ap.Sacumen_AVR</record_name>
+        <reverted_from/>
+        <source>8ffe5057c35caa10fc40382a0501312c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pavan.kuma@contrastsecurity.com</sys_created_by>
+        <sys_created_on>2025-10-24 04:06:29</sys_created_on>
+        <sys_id>c6716111c3f83690fc40382a0501319f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a146587bd0000001</sys_recorded_at>
+        <sys_updated_by>pavan.kuma@contrastsecurity.com</sys_updated_by>
+        <sys_updated_on>2025-10-24 04:06:29</sys_updated_on>
+        <type>Connection &amp; Credential Aliases</type>
+        <update_guid>0e716111b1f836907ca5f0a2268e879e</update_guid>
+        <update_guid_history>0e716111b1f836907ca5f0a2268e879e:-1569228742</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pavan.kuma@contrastsecurity.com</sys_created_by>
+        <sys_created_on>2025-10-24 04:06:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_alias">sys_alias</sys_db_object>
+        <sys_id>348572a46ae4464cb83c245f8fb88e64</sys_id>
+        <sys_metadata>1561edddc3b83690fc40382a05013160</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ntsi_contrast_ap.Sacumen_AVR</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_scope_delete display_value="">0ec2c46ddde14f1187e4a45dd916af21</sys_scope_delete>
+        <sys_update_name>sys_alias_1561edddc3b83690fc40382a05013160</sys_update_name>
+        <sys_update_version display_value="sys_alias_1561edddc3b83690fc40382a05013160">c6716111c3f83690fc40382a0501319f</sys_update_version>
+        <sys_updated_by>pavan.kuma@contrastsecurity.com</sys_updated_by>
+        <sys_updated_on>2025-10-24 04:06:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

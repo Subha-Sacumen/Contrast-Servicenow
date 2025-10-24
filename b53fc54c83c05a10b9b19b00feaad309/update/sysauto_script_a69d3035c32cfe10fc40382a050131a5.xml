@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_run_end/>
+        <entered_run_start/>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <max_drift/>
+        <name>SAST Integration- Status update</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <repeat_every/>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_daysofweek/>
+        <run_end/>
+        <run_month>1</run_month>
+        <run_period/>
+        <run_start>2025-10-13 04:31:03</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>daily</run_type>
+        <run_weekinmonth>1</run_weekinmonth>
+        <script><![CDATA[var auth, api_key;
+
+var gri = new GlideRecordSecure('sn_sec_int_impl_config');
+gri.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration=6fbf705c83295210b9b19b00feaad30e');
+gri.query();
+
+var grk = new GlideRecordSecure('sn_sec_int_impl_config');
+grk.addEncodedQuery('implementation.name=Contrast Application Vulnerability^configuration=3a1f705c83295210b9b19b00feaad360');
+grk.query();
+if (gri.next() && grk.next()) {
+    auth = gri.value;
+    api_key = grk.value;
+}
+
+
+
+var gr1 = new GlideRecord('x_ntsi_contrast_ap_contrast_vulnerability_status_sync');
+//gr1.addEncodedQuery("sys_created_onONLast 15 minutes@javascript:gs.beginningOfLast15Minutes()@javascript:gs.endOfLast15Minutes()^type=SAST");
+gr1.addEncodedQuery("responseISEMPTY^type=SAST");
+gr1.orderBy('sys_created_on');
+gr1.query();
+while (gr1.next()) {
+    runIntegration(auth, api_key);
+}
+
+function runIntegration(auth, api_key) {
+    //Trigger API
+    try {
+        var r = new sn_ws.RESTMessageV2('x_ntsi_contrast_ap.Contrast REST API', 'SAST OUTBOUND');
+
+        r.setRequestHeader('API-Key', api_key);
+        r.setRequestHeader('Authorization', auth);
+        r.setRequestHeader('Content-Type', 'application/json');
+        r.setEndpoint(gr1.end_point);
+        r.setRequestBody(gr1.payload.toString());
+        var response = r.executeAsync();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+
+        gr1.response = httpStatus + ' - ' + responseBody;
+        gr1.update();
+    } catch (ex) {
+        var message = ex.message;
+    }
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>subha.udhayakumar</sys_created_by>
+        <sys_created_on>2025-10-13 04:32:39</sys_created_on>
+        <sys_id>a69d3035c32cfe10fc40382a050131a5</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>SAST Integration- Status update</sys_name>
+        <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
+        <sys_update_name>sysauto_script_a69d3035c32cfe10fc40382a050131a5</sys_update_name>
+        <sys_updated_by>subha.udhayakumar</sys_updated_by>
+        <sys_updated_on>2025-10-13 07:23:12</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

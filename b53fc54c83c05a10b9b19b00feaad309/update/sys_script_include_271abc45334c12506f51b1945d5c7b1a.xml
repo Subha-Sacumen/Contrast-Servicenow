@@ -6,95 +6,85 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
+        <mobile_callable>false</mobile_callable>
         <name>ContrastAppListIntegrationJson</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var ContrastAppListIntegrationJson = Class.create();
 ContrastAppListIntegrationJson.prototype = Object.extendsObject(sn_vul.ApplicationVulnerabilityIntegrationBase, {
 
     UTIL: new x_ntsi_contrast_ap.ContrastUtilBase(),
 
     retrieveData: function() {
-
-        var resp = new x_ntsi_contrast_ap.ContrastUtilBase().triggerAPI(this.IMPLEMENTATION);
-        var responseBody = resp.getBody();
-
-        if (resp.getStatusCode() == 200) {
+        var offset = 0;
+        var limit = 2000;
+        var arr = [];
+        var responseBody = -1;
+        var rtn = true;
+        while (rtn == true) {
+            
+            var resp = this.UTIL.triggerAPI(this.IMPLEMENTATION, offset, limit);
+            if (resp.getStatusCode() != 200) {
+                gs.error("API Failed with status code: " + resp.getStatusCode());
+                break;
+            }
+            var apps = JSON.parse(resp.getBody());
+            responseBody = apps.applications.length;
+            var application_parms = apps.applications || [];
+            if (application_parms.length === 0) break;
             var orgID = new x_ntsi_contrast_ap.ContrastUtilBase().getApiORGDetails();
             var appURL = new x_ntsi_contrast_ap.ContrastUtilBase().getApiURLDetails();
-            try {
 
-                var apps = JSON.parse(responseBody);
-                var application_parms = apps.applications;
-                var arr = [];
+            for (var appIdx in application_parms) {
 
-                for (var a in application_parms) {
+                var offset_v = 0;
+                var limit_v = 50;
+                var app = application_parms[appIdx];
 
-                    var vulresp = new x_ntsi_contrast_ap.ContrastUtilBase().getIASTVulnerabilities(this.IMPLEMENTATION, application_parms[a].app_id);
+                while (rtn == true) {
+                    var vulresp = this.UTIL.getIASTVulnerabilities(this.IMPLEMENTATION, app.app_id, offset_v, limit_v);
+                    if (vulresp.getStatusCode() != 200){
+						gs.error("API Failed with status code: " + vulresp.getStatusCode());
+						break;
+					}
+					
+                    var vul = JSON.parse(vulresp.getBody());
+                    var traces = vul.traces || [];
+					if (traces.length === 0) break;
 
-                    if (vulresp.getStatusCode() == 200) {
-                        var vul = JSON.parse(vulresp.getBody());
-                        var trace = vul.traces;
-                        for (var a1 in trace) {
-                            var obj = trace[a1];
-
-                            obj.app_id = application_parms[a].app_id;
-                            obj.app_name = application_parms[a].name;
-                            obj.app_version = trace[a1].app_version_tags.toString();
-                            obj.organization_id = orgID;
-                            //Generate Source link and Vul link
-                            obj.source_link = "https://" + appURL + "/Contrast/static/ng/index.html#/" + orgID + "/applications/" + application_parms[a].app_id + "/vulns/" + trace[a1].uuid;
-                            obj.vul_link = "https://" + appURL + "/Contrast/api/ng/" + orgID + "/orgtraces/mark";
-                            arr.push(obj);
-
-                            //Generate object for Application 
-                            var appObj = {
-                                source_app_id: application_parms[a].app_id + "",
-                                app_name: application_parms[a].name + "",
-                                description: application_parms[a].name + "",
-                                source_app_guid: obj.uuid + "",
-                            };
-
-                            var result = this.AVR_API.createOrUpdateApp(appObj);
-
-                        }
+                    for (var tIdx in traces) {
+                        var trace = traces[tIdx];
+                        trace.app_id = app.app_id;
+                        trace.app_name = app.name;
+                        trace.app_version = (trace.app_version_tags || []).toString();
+                        trace.organization_id = orgID;
+                        trace.source_link = "https://" + appURL + "/Contrast/static/ng/index.html#/" + orgID + "/applications/" + app.app_id + "/vulns/" + trace.uuid;
+                        trace.vul_link = "https://" + appURL + "/Contrast/api/ng/" + orgID + "/orgtraces/mark";
+                        arr.push(trace);                      
                     }
+					offset_v += limit_v;
                 }
-                arr.join();
-                var objtraces = {
-                    "traces": arr
-                };
-
-
-                //Generate Attachment with Response payload to trigger data source
-
-                var attachmentGr = new GlideSysAttachment();
-                var fileName = this.integrationGr.name + "_" + new GlideDateTime().toString() + ".json";
-                var sysId = attachmentGr.write(this.integrationProcessGr, fileName, "json", JSON.stringify(objtraces));
-                var obj1 = {
-                    contents: sysId,
-                    contentType: "sys_attachment",
-                    extension: "json"
-                };
-
-                return obj1;
-
-            } catch (e) {
-                gs.error("Failed to parse JSON: " + e.message);
-                // Optionally handle the error or take fallback action
             }
-
-        } else {
-            gs.error("API Failed with status code: " + resp.getStatusCode());
-            return null;
+            offset += limit;
         }
+
+        var objtraces = {
+            "traces": arr
+        };
+
+        var attachmentGr = new GlideSysAttachment();
+        var fileName = this.integrationGr.name + "_" + new GlideDateTime().toString() + ".json";
+        var sysId = attachmentGr.write(this.integrationProcessGr, fileName, "json", JSON.stringify(objtraces));
+
+        return {
+            contents: sysId,
+            contentType: "sys_attachment",
+            extension: "json"
+        };
     },
 
     shouldRetry: function(process) {
         return true;
     },
-
-
-
-
 
     type: 'ContrastAppListIntegrationJson'
 });]]></script>
@@ -102,13 +92,13 @@ ContrastAppListIntegrationJson.prototype = Object.extendsObject(sn_vul.Applicati
         <sys_created_by>subha.u@sacumen.com</sys_created_by>
         <sys_created_on>2024-08-14 07:26:51</sys_created_on>
         <sys_id>271abc45334c12506f51b1945d5c7b1a</sys_id>
-        <sys_mod_count>100</sys_mod_count>
+        <sys_mod_count>121</sys_mod_count>
         <sys_name>ContrastAppListIntegrationJson</sys_name>
         <sys_package display_value="Contrast Security Application Vulnerability Integration" source="x_ntsi_contrast_ap">b53fc54c83c05a10b9b19b00feaad309</sys_package>
         <sys_policy/>
         <sys_scope display_value="Contrast Security Application Vulnerability Integration">b53fc54c83c05a10b9b19b00feaad309</sys_scope>
         <sys_update_name>sys_script_include_271abc45334c12506f51b1945d5c7b1a</sys_update_name>
         <sys_updated_by>subha.udhayakumar</sys_updated_by>
-        <sys_updated_on>2025-08-31 11:15:18</sys_updated_on>
+        <sys_updated_on>2025-10-23 04:36:58</sys_updated_on>
     </sys_script_include>
 </record_update>
