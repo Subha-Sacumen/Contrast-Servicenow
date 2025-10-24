@@ -24,7 +24,7 @@
         <scoped_administration>false</scoped_administration>
         <short_description>This integration enables a bidirectional sync of vulnerabilities and status between Contrast Security and ServiceNow Application Vulnerability Response for static and runtime detection.</short_description>
         <source>x_ntsi_contrast_ap</source>
-        <store_correlation_id>REPOAPP0002311382</store_correlation_id>
+        <store_correlation_id>REPOAPP0002311739</store_correlation_id>
         <store_url/>
         <subscription_entitlement/>
         <sys_class_name>sys_app</sys_class_name>
@@ -32,16 +32,16 @@
         <sys_created_by>subha.u@sacumen.com</sys_created_by>
         <sys_created_on>2024-08-11 06:24:56</sys_created_on>
         <sys_id>b53fc54c83c05a10b9b19b00feaad309</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_updated_by>pavan.kuma@contrastsecurity.com</sys_updated_by>
-        <sys_updated_on>2025-10-24 03:52:15</sys_updated_on>
+        <sys_updated_on>2025-10-24 08:48:40</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
         <user_role/>
         <vendor>Contrast Security, Inc.</vendor>
         <vendor_prefix/>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
     </sys_app>
     <sys_translated_text action="delete_multiple" query="documentkey=b53fc54c83c05a10b9b19b00feaad309"/>
 </record_update>
